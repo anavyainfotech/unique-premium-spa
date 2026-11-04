@@ -370,6 +370,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Comprehensive SEO Content Section for Google Ranking */}
+      <section className="py-20 px-4 bg-white border-t border-pink-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[var(--color-primary)] font-semibold block mb-2 text-center">
+              PREMIER WELLNESS &amp; SPA THERAPIES
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-8 text-center">
+              The Leading Luxury Spa &amp; Massage Destination in Delhi NCR
+            </h2>
+
+            <div className="space-y-6 text-sm sm:text-base text-gray-700 font-light leading-relaxed">
+              <p>
+                In the heart of India&apos;s most bustling metropolitan region, <strong className="text-gray-900 font-semibold">Unique Premium Spa</strong> stands as a serene sanctuary designed for comprehensive physical renewal and cognitive decompression. Whether you spend strenuous work weeks commuting through Gurgaon corporate corridors or running high-pressure schedules across Delhi, our therapies are scientifically crafted to release deep-seated myofascial knots, soothe chronic cervical tension, and restore internal harmony.
+              </p>
+
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[var(--color-primary)] pt-4">
+                Tailored Massage Modalities for Every Lifestyle
+              </h3>
+              <p>
+                Every individual has unique wellness requirements. That is why our spa menu features a versatile spectrum of treatments:
+              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                <li className="bg-[#faeef4]/50 p-4 rounded-2xl border border-pink-100">
+                  <strong className="text-gray-900 block font-serif font-bold text-base mb-1">Swedish &amp; Full Body Massage:</strong>
+                  Gentle rhythmic gliding strokes (effleurage) combined with warm organic botanical oils to enhance lymphatic drainage, improve circulation, and calm the autonomic nervous system.
+                </li>
+                <li className="bg-[#faeef4]/50 p-4 rounded-2xl border border-pink-100">
+                  <strong className="text-gray-900 block font-serif font-bold text-base mb-1">Deep Tissue &amp; B2B Therapy:</strong>
+                  Concentrated myofascial pressure designed to penetrate deep muscle tissue, releasing stubborn adhesions and chronic stiffness caused by sedentary office postures.
+                </li>
+                <li className="bg-[#faeef4]/50 p-4 rounded-2xl border border-pink-100">
+                  <strong className="text-gray-900 block font-serif font-bold text-base mb-1">Sandwich Four-Hand Therapy:</strong>
+                  Our signature synchronized treatment where two certified therapists work concurrently in mirrored harmony to facilitate profound theta-wave neurological relaxation.
+                </li>
+                <li className="bg-[#faeef4]/50 p-4 rounded-2xl border border-pink-100">
+                  <strong className="text-gray-900 block font-serif font-bold text-base mb-1">VIP Couples Suite Sessions:</strong>
+                  Private side-by-side suites equipped with dual tables, floral aromatherapy hydrotherapy baths, and dedicated individual therapists for mutual relaxation.
+                </li>
+              </ul>
+
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[var(--color-primary)] pt-4">
+                Strict Hygiene Standards &amp; Certified Professionalism
+              </h3>
+              <p>
+                At Unique Premium Spa, client comfort, hygiene, and complete privacy are our utmost priorities. All our 7 spa locations across <strong className="text-gray-900 font-semibold">Aerocity, Connaught Place, New Friends Colony, Gurgaon, and Vasant Kunj</strong> feature sanitized private treatment rooms, hospital-grade fresh linens, disposable spa essentials, and ensuite hot shower and steam amenities. Every therapist on our team undergoes rigorous continuous training in human anatomy, therapeutic pressure modulation, and polite client etiquette.
+              </p>
+
+              <div className="bg-pink-50/60 p-6 rounded-3xl border border-pink-200 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                  <h4 className="font-serif text-lg font-bold text-gray-900 mb-1">Need assistance choosing the ideal therapy?</h4>
+                  <p className="text-xs sm:text-sm text-gray-600">Our concierge is available 24/7 to recommend treatments based on your body condition.</p>
+                </div>
+                <a
+                  href="tel:+919718892869"
+                  className="px-6 py-3 rounded-full bg-[var(--color-primary)] text-white text-xs font-bold uppercase tracking-wider hover:bg-[var(--color-primary-hover)] shrink-0 transition-all shadow-md"
+                >
+                  Call +91 97188 92869
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Frequently Asked Questions Section on Homepage */}
       <section className="py-20 px-4 bg-[#fdf8fa] border-t border-pink-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -13,6 +13,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import HeroSection from "@/components/HeroSection";
 
 const homeFaqs = [
   {
@@ -40,80 +41,8 @@ const homeFaqs = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--color-background)] text-[var(--color-foreground)]">
-      {/* Hero Section with Ambient Background Video */}
-      <section className="relative overflow-hidden min-h-[580px] lg:min-h-[660px] flex items-center justify-center">
-        {/* Background Video with Rich Overlay */}
-        <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover scale-105"
-            poster="/hero-woman.png"
-            aria-hidden="true"
-          >
-            <source src="/hero-video.mp4" type="video/mp4" />
-          </video>
-          {/* Multi-layer Gradient Overlay for High Readability & Luxury Aesthetics */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/40 z-10" />
-          <div className="absolute inset-0 bg-[var(--color-primary)]/20 mix-blend-multiply z-10" />
-        </div>
-
-        {/* Content Container */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
-          <div className="max-w-3xl text-left">
-            {/* SEO Tagline */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-pink-200 text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase mb-5">
-              <Sparkles className="w-3.5 h-3.5 text-pink-300" />
-              <span>Luxury Spa &amp; Wellness in Delhi NCR</span>
-            </div>
-            
-            {/* SEO-Optimized H1 Headline */}
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight mb-6 drop-shadow-md">
-              Always Make Room <br className="hidden sm:inline" />
-              for a Little Calm in <br className="hidden sm:inline" />
-              <span className="text-pink-300">Your Life</span>
-            </h1>
-            
-            {/* Descriptive Body for SEO & User Conversion */}
-            <p className="text-sm sm:text-base lg:text-lg text-white/90 max-w-2xl mb-8 leading-relaxed font-light drop-shadow">
-              Experience certified therapeutic healing across 7 luxury outlets in Delhi NCR — including Full Body, B2B, Four-Hand Sandwich, Couples, and Traditional Thai massage with pharmaceutical-grade hygiene and private suites.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 mb-8">
-              <a
-                href="tel:+919718892869"
-                className="px-8 py-4 rounded-full bg-[var(--color-primary)] text-white font-bold text-sm tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center gap-3 shadow-xl shadow-pink-900/40 hover:scale-[1.02]"
-              >
-                <Phone className="w-4 h-4" /> BOOK APPOINTMENT
-              </a>
-              <Link
-                href="/services"
-                className="px-8 py-4 rounded-full border-2 border-white/90 text-white font-bold text-sm tracking-wider uppercase hover:bg-white hover:text-gray-900 transition-all backdrop-blur-xs hover:scale-[1.02]"
-              >
-                EXPLORE SERVICES
-              </Link>
-            </div>
-
-            {/* Quick Badges / Trust Signals */}
-            <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-white/15 text-xs text-white/80 font-medium">
-              <a
-                href="tel:+919718892869"
-                className="inline-flex items-center gap-2 hover:text-pink-300 transition-colors"
-              >
-                <Phone className="w-3.5 h-3.5 text-pink-300" />
-                <span>Hotline: +91 97188 92869 (Aerocity, CP, NFC, Gurgaon &amp; more)</span>
-              </a>
-              <span className="hidden sm:inline text-white/40">|</span>
-              <span className="flex items-center gap-1.5 text-white/90">
-                <ShieldCheck className="w-4 h-4 text-pink-300" /> 100% Verified Therapists &amp; VIP Suites
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Clean Centered Hero with Parallax Video */}
+      <HeroSection />
 
       {/* Exact Magenta / Pink Stats Strip from Screenshot */}
       <section className="bg-[var(--color-primary)] text-white py-6 px-4 shadow-sm relative z-20">

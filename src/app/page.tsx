@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { 
   Sparkles, 
   Phone, 
@@ -11,6 +12,30 @@ import {
   Flower2, 
   ArrowRight
 } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
+
+const homeFaqs = [
+  {
+    question: "What types of massage services are offered at Unique Premium Spa?",
+    answer: "We offer Full Body Massage, Complete Sessions with aromatherapy, specialized B2B Massage, synchronous Four-Hand Sandwich Massage, Luxury Couple Suites, and traditional Authentic Thai Massage across all 7 Delhi NCR locations."
+  },
+  {
+    question: "How do I book an appointment?",
+    answer: "You can book easily by calling our 24/7 centralized helpline at +91 97188 92869 or messaging us on WhatsApp / Telegram. We allocate your preferred therapist and slot instantly."
+  },
+  {
+    question: "Are private showers and amenities available?",
+    answer: "Yes, every VIP treatment suite is sanitized, fully air-conditioned, and equipped with a private ensuite shower, steam amenities, fresh towels, disposable spa attire, and complimentary herbal tea."
+  },
+  {
+    question: "Which locations in Delhi NCR can I visit?",
+    answer: "Our branches are located in Aerocity, Connaught Place (CP), New Friends Colony (NFC), Gurgaon (DLF Phase / Golf Course Rd), Vasant Kunj, and nearby premier hubs."
+  },
+  {
+    question: "What are your operating hours?",
+    answer: "Our outlets operate 7 days a week from 10:00 AM to 10:30 PM. We recommend calling ahead to reserve peak evening and weekend slots."
+  }
+];
 
 export default function Home() {
   return (
@@ -136,8 +161,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-md transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Link href="/services/full-body-massage" className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-lg hover:border-[var(--color-primary)]/50 transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer block">
               <div className="w-14 h-14 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform">
                 <Waves className="w-6 h-6 stroke-[2.2]" />
               </div>
@@ -147,9 +172,9 @@ export default function Home() {
               <p className="text-xs tracking-wider text-gray-400 uppercase font-medium">
                 60 MIN &nbsp;·&nbsp; ₹1,500
               </p>
-            </div>
+            </Link>
 
-            <div className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-md transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer">
+            <Link href="/services/complete-sessions" className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-lg hover:border-[var(--color-primary)]/50 transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer block">
               <div className="w-14 h-14 rounded-full bg-[#fdebf3] text-[var(--color-primary)] flex items-center justify-center mb-5 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
                 <Sparkles className="w-6 h-6 stroke-[2.2]" />
               </div>
@@ -159,9 +184,9 @@ export default function Home() {
               <p className="text-xs tracking-wider text-gray-400 uppercase font-medium">
                 60 MIN &nbsp;·&nbsp; ₹2,499
               </p>
-            </div>
+            </Link>
 
-            <div className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-md transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer">
+            <Link href="/services/b2b-massage" className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-lg hover:border-[var(--color-primary)]/50 transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer block">
               <div className="w-14 h-14 rounded-full bg-[#fdebf3] text-[var(--color-primary)] flex items-center justify-center mb-5 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
                 <Hand className="w-6 h-6 stroke-[2.2]" />
               </div>
@@ -171,9 +196,9 @@ export default function Home() {
               <p className="text-xs tracking-wider text-gray-400 uppercase font-medium">
                 60 MIN &nbsp;·&nbsp; ₹2,999
               </p>
-            </div>
+            </Link>
 
-            <div className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-md transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer">
+            <Link href="/services/sandwich-massage" className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-lg hover:border-[var(--color-primary)]/50 transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer block">
               <div className="w-14 h-14 rounded-full bg-[#fdebf3] text-[var(--color-primary)] flex items-center justify-center mb-5 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
                 <Users className="w-6 h-6 stroke-[2.2]" />
               </div>
@@ -183,9 +208,9 @@ export default function Home() {
               <p className="text-xs tracking-wider text-gray-400 uppercase font-medium">
                 60 MIN &nbsp;·&nbsp; ₹3,999
               </p>
-            </div>
+            </Link>
 
-            <div className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-md transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer">
+            <Link href="/services/couple-massage" className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-lg hover:border-[var(--color-primary)]/50 transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer block">
               <div className="w-14 h-14 rounded-full bg-[#fdebf3] text-[var(--color-primary)] flex items-center justify-center mb-5 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
                 <Heart className="w-6 h-6 stroke-[2.2]" />
               </div>
@@ -195,9 +220,9 @@ export default function Home() {
               <p className="text-xs tracking-wider text-gray-400 uppercase font-medium">
                 60 MIN &nbsp;·&nbsp; ₹6,000
               </p>
-            </div>
+            </Link>
 
-            <div className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-md transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer">
+            <Link href="/services/thai-massage" className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-lg hover:border-[var(--color-primary)]/50 transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer block">
               <div className="w-14 h-14 rounded-full bg-[#fdebf3] text-[var(--color-primary)] flex items-center justify-center mb-5 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
                 <Flower2 className="w-6 h-6 stroke-[2.2]" />
               </div>
@@ -207,7 +232,7 @@ export default function Home() {
               <p className="text-xs tracking-wider text-gray-400 uppercase font-medium">
                 60 MIN &nbsp;·&nbsp; ON REQUEST
               </p>
-            </div>
+            </Link>
           </div>
 
           <div className="text-center mt-12">
@@ -409,6 +434,17 @@ export default function Home() {
           <p className="text-xs sm:text-sm text-gray-500">
             Call <a href="tel:+919718892869" className="text-[var(--color-primary)] font-semibold hover:underline">+91 97188 92869</a> and we will connect you to the nearest centre.
           </p>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions Section on Homepage */}
+      <section className="py-20 px-4 bg-[#fdf8fa] border-t border-pink-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FAQAccordion
+            items={homeFaqs}
+            title="Frequently Asked Questions"
+            subtitle="EVERYTHING YOU NEED TO KNOW"
+          />
         </div>
       </section>
     </main>

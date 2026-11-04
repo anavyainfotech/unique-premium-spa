@@ -9,6 +9,10 @@ export interface BlogPost {
     heading: string;
     paragraphs: string[];
   }[];
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -42,6 +46,20 @@ export const blogPosts: BlogPost[] = [
         ],
       },
     ],
+    faqs: [
+      {
+        question: "How often should I get a massage for chronic desk fatigue?",
+        answer: "For desk workers and frequent commuters, a bi-weekly or monthly session helps prevent chronic spinal tension and maintain joint mobility."
+      },
+      {
+        question: "Is deep tissue massage painful?",
+        answer: "There can be slight discomfort when working through deep muscle knots, but our therapists always modulate pressure to keep it within your comfortable pain threshold."
+      },
+      {
+        question: "What should I do after my massage?",
+        answer: "Drink plenty of water to help flush out metabolic toxins, avoid heavy workouts for the rest of the day, and take a warm shower or bath."
+      }
+    ]
   },
   {
     slug: "science-behind-four-hand-sandwich-massage",
@@ -72,6 +90,20 @@ export const blogPosts: BlogPost[] = [
         ],
       },
     ],
+    faqs: [
+      {
+        question: "How does the four-hand coordination work?",
+        answer: "One therapist acts as the lead (pace-setter) while the second therapist mirrors the stroke frequency, direction, and pressure in real-time."
+      },
+      {
+        question: "Is four-hand massage suitable for first-timers?",
+        answer: "Yes, anyone can experience a four-hand massage. It is especially recommended if you have trouble relaxing your mind during standard massages."
+      },
+      {
+        question: "How can I book a four-hand session in Delhi NCR?",
+        answer: "You can book directly by calling +91 97188 92869. Our concierge will confirm availability of two certified therapists at your preferred outlet."
+      }
+    ]
   },
   {
     slug: "benefits-of-essential-oils-hot-stone-autumn",
@@ -99,6 +131,16 @@ export const blogPosts: BlogPost[] = [
         ],
       },
     ],
+    faqs: [
+      {
+        question: "Are the hot stones too hot for sensitive skin?",
+        answer: "Therapists always check stone temperature on their own arms and with the client before placing them on the body. The heat is soothing and comfortable."
+      },
+      {
+        question: "Which essential oils are best for colder months?",
+        answer: "Warm, grounding oils such as sandalwood, cedarwood, lavender, and eucalyptus are ideal during autumn and winter in Delhi NCR."
+      }
+    ]
   },
   {
     slug: "couples-massage-delhi-ncr-what-to-expect",
@@ -129,5 +171,15 @@ export const blogPosts: BlogPost[] = [
         ],
       },
     ],
+    faqs: [
+      {
+        question: "Can we customize the music and fragrance in the suite?",
+        answer: "Yes, our couples suites allow custom ambient music selection and choice of soothing essential oil diffusers."
+      },
+      {
+        question: "Is there a private shower and dressing area inside the suite?",
+        answer: "Yes, every VIP couple suite has its own private ensuite shower, steam, and dressing space for complete privacy."
+      }
+    ]
   },
 ];

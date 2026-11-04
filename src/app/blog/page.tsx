@@ -1,11 +1,27 @@
 import Link from "next/link";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = {
   title: "Spa & Wellness Blog — Unique Premium Spa",
   description: "Read expert guides on massage benefits, choosing the right therapy, stress relief and wellness tips in Delhi NCR.",
 };
+
+const generalBlogFaqs = [
+  {
+    question: "How do I choose the best massage therapy for myself?",
+    answer: "If you want light stress relief and emotional calm, choose Swedish Massage. If you have chronic neck or lower back stiffness, Deep Tissue or B2B Massage is recommended. For mental burnout, our 4-hand Sandwich Massage provides optimal sensory decompression."
+  },
+  {
+    question: "Do I need to carry anything with me to the spa?",
+    answer: "No, all essential spa amenities—disposable undergarments, fresh plush bathrobes, sanitized towels, premium toiletries, and warm herbal tea—are provided at our suites."
+  },
+  {
+    question: "How can I book a session at Unique Premium Spa?",
+    answer: "You can book quickly by calling our 24/7 hotline at +91 97188 92869 or messaging us on WhatsApp. Our concierge will confirm the nearest available outlet."
+  }
+];
 
 export default function BlogPage() {
   return (
@@ -28,10 +44,9 @@ export default function BlogPage() {
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {blogPosts.map((post) => (
-            <Link
+            <article
               key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="bg-white rounded-3xl p-8 border border-pink-100 shadow-sm hover:shadow-xl hover:border-[var(--color-primary)]/50 transition-all flex flex-col justify-between group block"
+              className="bg-white rounded-3xl p-8 border border-pink-100 shadow-sm hover:shadow-xl hover:border-[var(--color-primary)]/50 transition-all flex flex-col justify-between group relative"
             >
               <div>
                 <div className="flex items-center gap-3 text-xs text-gray-400 mb-4">
@@ -48,7 +63,9 @@ export default function BlogPage() {
                 </div>
 
                 <h2 className="font-serif text-2xl font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors mb-3 leading-snug">
-                  {post.title}
+                  <Link href={`/blog/${post.slug}`} className="hover:underline focus:outline-none">
+                    {post.title}
+                  </Link>
                 </h2>
                 <p className="text-sm text-gray-600 font-light leading-relaxed mb-6">
                   {post.excerpt}
@@ -56,12 +73,24 @@ export default function BlogPage() {
               </div>
 
               <div className="pt-4 border-t border-pink-100">
-                <span className="inline-flex items-center gap-2 text-xs font-bold text-[var(--color-primary)] group-hover:translate-x-1 transition-transform">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="inline-flex items-center gap-2 text-xs font-bold text-[var(--color-primary)] group-hover:translate-x-1 transition-transform"
+                >
                   Read Full Article <ArrowRight className="w-3.5 h-3.5" />
-                </span>
+                </Link>
               </div>
-            </Link>
+            </article>
           ))}
+        </div>
+
+        {/* Blog Section FAQs */}
+        <div className="mt-16">
+          <FAQAccordion
+            items={generalBlogFaqs}
+            title="Blog & Wellness FAQs"
+            subtitle="ANSWERS FROM OUR SPA EXPERTS"
+          />
         </div>
 
       </div>

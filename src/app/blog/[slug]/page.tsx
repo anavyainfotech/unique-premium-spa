@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Clock, Calendar, ArrowLeft, Phone, MessageCircle } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
+import FAQAccordion from "@/components/FAQAccordion";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -89,6 +90,17 @@ export default async function BlogPostPage({ params }: Props) {
             </section>
           ))}
         </div>
+
+        {/* Blog Article FAQs */}
+        {post.faqs && post.faqs.length > 0 && (
+          <div className="mb-12">
+            <FAQAccordion
+              items={post.faqs}
+              title="Article FAQs"
+              subtitle="RELATED QUESTIONS & ADVICE"
+            />
+          </div>
+        )}
 
         {/* Booking CTA Box */}
         <div className="bg-gradient-to-r from-[var(--color-primary)] to-pink-600 rounded-3xl p-8 sm:p-10 text-white text-center shadow-xl">

@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
+import { blogPosts } from "@/data/blogPosts";
 
 export const metadata = {
   title: "Spa & Wellness Blog — Unique Premium Spa",
@@ -6,37 +8,6 @@ export const metadata = {
 };
 
 export default function BlogPage() {
-  const posts = [
-    {
-      title: "How to Choose the Right Massage Therapy for Urban Fatigue",
-      date: "Oct 28, 2026",
-      readTime: "4 min read",
-      category: "Wellness Guide",
-      excerpt: "Sitting long hours in office cubicles or commuting across NCR takes a heavy toll on your cervical spine. Learn whether Swedish or Deep Tissue is right for you.",
-    },
-    {
-      title: "The Therapeutic Science Behind Four-Hand Sandwich Massage",
-      date: "Oct 15, 2026",
-      readTime: "5 min read",
-      category: "Therapy Focus",
-      excerpt: "When two therapists move in synchronization, your brain cannot easily track both rhythms, entering deep meditative theta brainwave relaxation quicker.",
-    },
-    {
-      title: "Top 5 Benefits of Essential Oils & Hot Stone Therapy in Autumn",
-      date: "Sep 30, 2026",
-      readTime: "3 min read",
-      category: "Aromatherapy",
-      excerpt: "As seasonal changes bring cooler winds, lavender and sandalwood essential oils help restore dermal hydration while soothing muscle stiffness.",
-    },
-    {
-      title: "Couples Massage in Delhi NCR: What to Expect During Your Session",
-      date: "Sep 12, 2026",
-      readTime: "6 min read",
-      category: "Couple Spa",
-      excerpt: "A step-by-step walkthrough of what our VIP Couple Suites offer — from floral hydrotherapy baths to customized mutual relaxation therapies.",
-    },
-  ];
-
   return (
     <div className="bg-[var(--color-background)] min-h-screen py-16 px-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,10 +27,11 @@ export default function BlogPage() {
 
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {posts.map((post, idx) => (
-            <article
-              key={idx}
-              className="bg-white rounded-3xl p-8 border border-pink-100 shadow-sm hover:shadow-xl hover:border-[var(--color-primary)]/50 transition-all flex flex-col justify-between group"
+          {blogPosts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="bg-white rounded-3xl p-8 border border-pink-100 shadow-sm hover:shadow-xl hover:border-[var(--color-primary)]/50 transition-all flex flex-col justify-between group block"
             >
               <div>
                 <div className="flex items-center gap-3 text-xs text-gray-400 mb-4">
@@ -88,7 +60,7 @@ export default function BlogPage() {
                   Read Full Article <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 

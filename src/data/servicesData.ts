@@ -4,6 +4,7 @@ export interface ServiceDetail {
   subtitle: string;
   duration: string;
   price: string;
+  image: string;
   badge?: string;
   desc: string;
   longDesc: string[];
@@ -22,6 +23,7 @@ export const servicesData: ServiceDetail[] = [
     subtitle: "Everyday Full-Body Reset",
     duration: "60 / 90 Mins",
     price: "₹1,500",
+    image: "/services/full-body-massage.jpg",
     desc: "A soothing head-to-toe therapy using gentle pressure to release muscular tension, improve circulation, and renew your energy levels.",
     longDesc: [
       "Our Signature Full Body Massage is crafted to relieve physical fatigue, soothe overworked joints, and melt away emotional stress. Using long, fluid strokes along the contours of your body, certified therapists stimulate lymphatic drainage and boost healthy blood circulation.",
@@ -64,6 +66,7 @@ export const servicesData: ServiceDetail[] = [
     subtitle: "Deep Sensory Relaxation",
     duration: "60 / 90 Mins",
     price: "₹2,499",
+    image: "/services/complete-sessions.jpg",
     desc: "Our comprehensive multi-technique therapy integrating hot compress, organic aromatic oils, and customized pressure point healing.",
     longDesc: [
       "Complete Sessions are designed for those seeking an all-inclusive luxury spa package. This therapy blends Swedish effleurage, deep tissue trigger point release, and warm herbal compress therapy into one cohesive rejuvenating experience.",
@@ -103,6 +106,7 @@ export const servicesData: ServiceDetail[] = [
     duration: "60 / 90 Mins",
     price: "₹2,999",
     badge: "Popular",
+    image: "/services/b2b-massage.jpg",
     desc: "Intensive body-to-body gliding strokes delivering the highest tier of relaxation and therapeutic stress relief.",
     longDesc: [
       "B2B Massage is our premier luxury therapy focused on total sensory surrender and intense tactile relaxation. Skilled therapists employ seamless, gliding body-to-body movements using warm aromatic oils.",
@@ -142,6 +146,7 @@ export const servicesData: ServiceDetail[] = [
     duration: "60 / 90 Mins",
     price: "₹3,999",
     badge: "Signature",
+    image: "/services/sandwich-massage.jpg",
     desc: "Synchronised four-hand massage where two certified therapists work simultaneously to create deep restorative harmony.",
     longDesc: [
       "Experience our most exclusive treatment: the Sandwich (Four-Hand) Massage. Two certified therapists synchronize their movements, working simultaneously on both sides of your body in harmonious rhythm.",
@@ -180,6 +185,7 @@ export const servicesData: ServiceDetail[] = [
     subtitle: "Side-by-Side Luxury Retreat",
     duration: "60 / 90 Mins",
     price: "₹6,000",
+    image: "/services/couple-massage.jpg",
     desc: "Share serene wellness side-by-side in our private VIP couple suite, accented with floral aromatherapy and warm oil therapy.",
     longDesc: [
       "Create unforgettable shared memories of tranquil healing with our Luxury Couple Massage. You and your partner relax side-by-side on dual treatment tables within an opulent private suite.",
@@ -218,6 +224,7 @@ export const servicesData: ServiceDetail[] = [
     subtitle: "Traditional Body Realignment",
     duration: "60 / 90 Mins",
     price: "₹2,500",
+    image: "/services/thai-massage.jpg",
     desc: "Ancient passive stretching and deep acupressure techniques conducted on traditional mats without oil for flexibility and posture.",
     longDesc: [
       "Rooted in centuries-old Eastern healing traditions, our Authentic Thai Massage combines assisted yoga stretches, rhythmic compression, and targeted energy meridian (Sen lines) stimulation.",

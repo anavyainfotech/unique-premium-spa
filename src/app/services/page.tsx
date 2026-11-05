@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, Phone, ArrowRight, Sparkles } from "lucide-react";
 import { servicesData } from "@/data/servicesData";
 
@@ -25,37 +26,61 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        {/* Clean Services Grid — Main Things: Title, Price, Book & Details */}
+        {/* Clean Services Grid — Entire card clickable, with dedicated call button */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {servicesData.map((service) => (
             <div
               key={service.slug}
-              className="bg-white rounded-3xl p-6 sm:p-7 border border-pink-100 shadow-xs hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col justify-between group relative"
+              className="bg-white rounded-3xl overflow-hidden border border-pink-100 shadow-xs hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col justify-between group relative cursor-pointer"
             >
+              {/* Full card clickable link covering the whole card */}
+              <Link
+                href={`/services/${service.slug}`}
+                className="absolute inset-0 z-10"
+                aria-label={`View details for ${service.title}`}
+              />
+
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-medium px-3 py-1 rounded-full bg-pink-50 text-[var(--color-primary)] flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5" /> {service.duration}
-                  </span>
-                  {service.badge && (
-                    <span className="px-2.5 py-0.5 bg-[var(--color-primary)] text-white text-[10px] font-bold uppercase tracking-wider rounded-full">
-                      {service.badge}
+                <div className="relative h-52 w-full overflow-hidden bg-pink-50">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  
+                  <div className="absolute top-3 left-3 z-20">
+                    <span className="text-xs font-medium px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[var(--color-primary)] flex items-center gap-1.5 shadow-sm">
+                      <Clock className="w-3.5 h-3.5" /> {service.duration}
                     </span>
+                  </div>
+
+                  {service.badge && (
+                    <div className="absolute top-3 right-3 z-20">
+                      <span className="px-2.5 py-1 bg-[var(--color-primary)] text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-md">
+                        {service.badge}
+                      </span>
+                    </div>
                   )}
+
+                  <span className="absolute bottom-3 left-3 z-20 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                    {service.subtitle}
+                  </span>
                 </div>
 
-                <h2 className="font-serif text-2xl font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors mb-1.5">
-                  <Link href={`/services/${service.slug}`} className="hover:underline">
+                <div className="p-6 pb-2">
+                  <h2 className="font-serif text-2xl font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors mb-2">
                     {service.title}
-                  </Link>
-                </h2>
+                  </h2>
 
-                <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-6">
-                  {service.subtitle}
-                </p>
+                  <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed font-normal mb-2">
+                    {service.desc}
+                  </p>
+                </div>
               </div>
 
-              <div>
+              <div className="p-6 pt-0">
                 <div className="pt-4 border-t border-pink-100 flex items-center justify-between mb-4">
                   <div>
                     <span className="text-[10px] text-gray-400 block uppercase font-medium">Session Price</span>
@@ -65,18 +90,15 @@ export default function ServicesPage() {
                   </div>
                   <a
                     href="tel:+919718892869"
-                    className="px-6 py-2.5 rounded-full bg-[var(--color-primary)] text-white font-bold text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center gap-2 shadow-sm"
+                    className="relative z-20 px-6 py-2.5 rounded-full bg-[var(--color-primary)] text-white font-bold text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center gap-2 shadow-sm pointer-events-auto"
                   >
                     <Phone className="w-3.5 h-3.5" /> Book
                   </a>
                 </div>
 
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="w-full py-2.5 rounded-full bg-pink-50/70 hover:bg-pink-100/70 text-[var(--color-primary)] text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors"
-                >
-                  View Details &amp; FAQs <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                <div className="w-full py-2.5 rounded-full bg-pink-50/70 group-hover:bg-[var(--color-primary)] group-hover:text-white text-[var(--color-primary)] text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors">
+                  View Details &amp; FAQs <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
             </div>
           ))}

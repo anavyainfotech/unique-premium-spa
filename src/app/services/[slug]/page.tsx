@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, Phone, MessageCircle, ArrowLeft, CheckCircle2, ShieldCheck, Sparkles, MapPin } from "lucide-react";
 import { servicesData } from "@/data/servicesData";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -39,7 +40,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   return (
     <div className="bg-[var(--color-background)] min-h-screen py-16 px-4">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Navigation Back */}
         <div className="mb-8">
@@ -52,48 +53,60 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
 
         {/* Hero Card */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-pink-100 shadow-sm mb-12">
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-            <span className="px-3.5 py-1.5 rounded-full bg-pink-50 text-[var(--color-primary)] text-xs font-semibold uppercase tracking-wider">
-              {service.subtitle}
-            </span>
-            <div className="flex items-center gap-2 text-xs font-medium text-gray-500">
-              <Clock className="w-4 h-4 text-[var(--color-primary)]" />
-              <span>{service.duration}</span>
+        <div className="bg-white rounded-3xl overflow-hidden border border-pink-100 shadow-sm mb-12">
+          <div className="relative h-64 sm:h-80 w-full overflow-hidden bg-pink-50">
+            <Image
+              src={service.image}
+              alt={service.title}
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-center justify-between gap-3 text-white">
+              <span className="px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-wider border border-white/20">
+                {service.subtitle}
+              </span>
+              <div className="flex items-center gap-2 text-xs font-medium bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10">
+                <Clock className="w-4 h-4 text-pink-300" />
+                <span>{service.duration}</span>
+              </div>
             </div>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-            {service.title}
-          </h1>
+          <div className="p-8 sm:p-12">
+            <h1 className="font-serif text-3xl sm:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+              {service.title}
+            </h1>
 
-          <p className="text-base sm:text-lg text-gray-700 font-light leading-relaxed mb-8 max-w-3xl">
-            {service.desc}
-          </p>
+            <p className="text-base sm:text-lg text-gray-700 font-light leading-relaxed mb-8 max-w-3xl">
+              {service.desc}
+            </p>
 
-          <div className="flex flex-wrap items-center justify-between gap-6 pt-6 border-t border-pink-100">
-            <div>
-              <span className="text-xs text-gray-400 block uppercase font-medium">Session Price</span>
-              <span className="font-serif text-3xl sm:text-4xl font-bold text-[var(--color-primary)]">
-                {service.price}
-              </span>
-            </div>
+            <div className="flex flex-wrap items-center justify-between gap-6 pt-6 border-t border-pink-100">
+              <div>
+                <span className="text-xs text-gray-400 block uppercase font-medium">Session Price</span>
+                <span className="font-serif text-3xl sm:text-4xl font-bold text-[var(--color-primary)]">
+                  {service.price}
+                </span>
+              </div>
 
-            <div className="flex flex-wrap items-center gap-3">
-              <a
-                href="tel:+919718892869"
-                className="px-8 py-3.5 rounded-full bg-[var(--color-primary)] text-white font-bold text-xs uppercase tracking-wider hover:bg-[var(--color-primary-hover)] transition-all flex items-center gap-2 shadow-md shadow-pink-500/20"
-              >
-                <Phone className="w-4 h-4" /> Call to Book
-              </a>
-              <a
-                href="https://wa.me/919718892869"
-                target="_blank"
-                rel="noreferrer"
-                className="px-8 py-3.5 rounded-full border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-bold text-xs uppercase tracking-wider hover:bg-pink-50 transition-all flex items-center gap-2"
-              >
-                <MessageCircle className="w-4 h-4" /> WhatsApp
-              </a>
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href="tel:+919718892869"
+                  className="px-8 py-3.5 rounded-full bg-[var(--color-primary)] text-white font-bold text-xs uppercase tracking-wider hover:bg-[var(--color-primary-hover)] transition-all flex items-center gap-2 shadow-md shadow-pink-500/20"
+                >
+                  <Phone className="w-4 h-4" /> Call to Book
+                </a>
+                <a
+                  href="https://wa.me/919718892869"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-8 py-3.5 rounded-full border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-bold text-xs uppercase tracking-wider hover:bg-pink-50 transition-all flex items-center gap-2"
+                >
+                  <MessageCircle className="w-4 h-4" /> WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -95,76 +95,148 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link href="/services/full-body-massage" className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-lg hover:border-[var(--color-primary)]/50 transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer block">
-              <div className="w-14 h-14 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform">
-                <Waves className="w-6 h-6 stroke-[2.2]" />
+            <Link href="/services/full-body-massage" className="bg-white rounded-3xl overflow-hidden shadow-xs border border-pink-100 hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col group cursor-pointer">
+              <div className="relative h-48 w-full overflow-hidden bg-pink-50">
+                <Image
+                  src="/services/full-body-massage.jpg"
+                  alt="Full Body Massage"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                  Everyday Reset
+                </span>
               </div>
-              <h3 className="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
-                Full Body Massage
-              </h3>
-              <p className="text-xs tracking-wider text-gray-400 uppercase font-medium">
-                60 MIN &nbsp;·&nbsp; ₹1,500
-              </p>
+              <div className="p-6 text-center flex flex-col items-center">
+                <h3 className="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+                  Full Body Massage
+                </h3>
+                <p className="text-xs tracking-wider text-[var(--color-primary)] uppercase font-semibold">
+                  60 MIN &nbsp;·&nbsp; ₹1,500
+                </p>
+              </div>
             </Link>
 
-            <Link href="/services/complete-sessions" className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-lg hover:border-[var(--color-primary)]/50 transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer block">
-              <div className="w-14 h-14 rounded-full bg-[#fdebf3] text-[var(--color-primary)] flex items-center justify-center mb-5 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
-                <Sparkles className="w-6 h-6 stroke-[2.2]" />
+            <Link href="/services/complete-sessions" className="bg-white rounded-3xl overflow-hidden shadow-xs border border-pink-100 hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col group cursor-pointer">
+              <div className="relative h-48 w-full overflow-hidden bg-pink-50">
+                <Image
+                  src="/services/complete-sessions.jpg"
+                  alt="Complete Sessions"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                  Sensory Healing
+                </span>
               </div>
-              <h3 className="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
-                Complete Sessions
-              </h3>
-              <p className="text-xs tracking-wider text-gray-400 uppercase font-medium">
-                60 MIN &nbsp;·&nbsp; ₹2,499
-              </p>
+              <div className="p-6 text-center flex flex-col items-center">
+                <h3 className="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+                  Complete Sessions
+                </h3>
+                <p className="text-xs tracking-wider text-[var(--color-primary)] uppercase font-semibold">
+                  60 MIN &nbsp;·&nbsp; ₹2,499
+                </p>
+              </div>
             </Link>
 
-            <Link href="/services/b2b-massage" className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-lg hover:border-[var(--color-primary)]/50 transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer block">
-              <div className="w-14 h-14 rounded-full bg-[#fdebf3] text-[var(--color-primary)] flex items-center justify-center mb-5 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
-                <Hand className="w-6 h-6 stroke-[2.2]" />
+            <Link href="/services/b2b-massage" className="bg-white rounded-3xl overflow-hidden shadow-xs border border-pink-100 hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col group cursor-pointer">
+              <div className="relative h-48 w-full overflow-hidden bg-pink-50">
+                <Image
+                  src="/services/b2b-massage.jpg"
+                  alt="B2B Massage"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <span className="absolute top-3 right-3 px-2.5 py-0.5 bg-[var(--color-primary)] text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-sm">
+                  Popular
+                </span>
+                <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                  Sensory Gliding
+                </span>
               </div>
-              <h3 className="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
-                B2B Massage
-              </h3>
-              <p className="text-xs tracking-wider text-gray-400 uppercase font-medium">
-                60 MIN &nbsp;·&nbsp; ₹2,999
-              </p>
+              <div className="p-6 text-center flex flex-col items-center">
+                <h3 className="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+                  B2B Massage
+                </h3>
+                <p className="text-xs tracking-wider text-[var(--color-primary)] uppercase font-semibold">
+                  60 MIN &nbsp;·&nbsp; ₹2,999
+                </p>
+              </div>
             </Link>
 
-            <Link href="/services/sandwich-massage" className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-lg hover:border-[var(--color-primary)]/50 transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer block">
-              <div className="w-14 h-14 rounded-full bg-[#fdebf3] text-[var(--color-primary)] flex items-center justify-center mb-5 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
-                <Users className="w-6 h-6 stroke-[2.2]" />
+            <Link href="/services/sandwich-massage" className="bg-white rounded-3xl overflow-hidden shadow-xs border border-pink-100 hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col group cursor-pointer">
+              <div className="relative h-48 w-full overflow-hidden bg-pink-50">
+                <Image
+                  src="/services/sandwich-massage.jpg"
+                  alt="Sandwich Massage"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <span className="absolute top-3 right-3 px-2.5 py-0.5 bg-[var(--color-primary)] text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-sm">
+                  Signature
+                </span>
+                <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                  Four-Hand Flow
+                </span>
               </div>
-              <h3 className="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
-                Sandwich Massage
-              </h3>
-              <p className="text-xs tracking-wider text-gray-400 uppercase font-medium">
-                60 MIN &nbsp;·&nbsp; ₹3,999
-              </p>
+              <div className="p-6 text-center flex flex-col items-center">
+                <h3 className="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+                  Sandwich Massage
+                </h3>
+                <p className="text-xs tracking-wider text-[var(--color-primary)] uppercase font-semibold">
+                  60 MIN &nbsp;·&nbsp; ₹3,999
+                </p>
+              </div>
             </Link>
 
-            <Link href="/services/couple-massage" className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-lg hover:border-[var(--color-primary)]/50 transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer block">
-              <div className="w-14 h-14 rounded-full bg-[#fdebf3] text-[var(--color-primary)] flex items-center justify-center mb-5 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
-                <Heart className="w-6 h-6 stroke-[2.2]" />
+            <Link href="/services/couple-massage" className="bg-white rounded-3xl overflow-hidden shadow-xs border border-pink-100 hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col group cursor-pointer">
+              <div className="relative h-48 w-full overflow-hidden bg-pink-50">
+                <Image
+                  src="/services/couple-massage.jpg"
+                  alt="Couple Massage"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                  VIP Suite
+                </span>
               </div>
-              <h3 className="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
-                Couple Massage
-              </h3>
-              <p className="text-xs tracking-wider text-gray-400 uppercase font-medium">
-                60 MIN &nbsp;·&nbsp; ₹6,000
-              </p>
+              <div className="p-6 text-center flex flex-col items-center">
+                <h3 className="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+                  Couple Massage
+                </h3>
+                <p className="text-xs tracking-wider text-[var(--color-primary)] uppercase font-semibold">
+                  60 MIN &nbsp;·&nbsp; ₹6,000
+                </p>
+              </div>
             </Link>
 
-            <Link href="/services/thai-massage" className="bg-white rounded-3xl p-8 text-center shadow-xs border border-pink-100 hover:shadow-lg hover:border-[var(--color-primary)]/50 transition-all flex flex-col items-center justify-center min-h-[220px] group cursor-pointer block">
-              <div className="w-14 h-14 rounded-full bg-[#fdebf3] text-[var(--color-primary)] flex items-center justify-center mb-5 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
-                <Flower2 className="w-6 h-6 stroke-[2.2]" />
+            <Link href="/services/thai-massage" className="bg-white rounded-3xl overflow-hidden shadow-xs border border-pink-100 hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col group cursor-pointer">
+              <div className="relative h-48 w-full overflow-hidden bg-pink-50">
+                <Image
+                  src="/services/thai-massage.jpg"
+                  alt="Thai Massage"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                  Authentic Zen
+                </span>
               </div>
-              <h3 className="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
-                Thai Massage
-              </h3>
-              <p className="text-xs tracking-wider text-gray-400 uppercase font-medium">
-                60 MIN &nbsp;·&nbsp; ON REQUEST
-              </p>
+              <div className="p-6 text-center flex flex-col items-center">
+                <h3 className="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+                  Thai Massage
+                </h3>
+                <p className="text-xs tracking-wider text-[var(--color-primary)] uppercase font-semibold">
+                  60 MIN &nbsp;·&nbsp; ₹2,500
+                </p>
+              </div>
             </Link>
           </div>
 

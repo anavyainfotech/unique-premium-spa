@@ -22,15 +22,15 @@ export default function FAQAccordion({ items, title = "Frequently Asked Question
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto my-12">
+    <div className="w-full max-w-5xl mx-auto my-12">
       {title && (
-        <div className="text-center mb-8">
+        <div className="text-center mb-10">
           {subtitle && (
-            <span className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-[var(--color-primary)] block mb-2">
+            <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-[var(--color-primary)] block mb-2">
               {subtitle}
             </span>
           )}
-          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--color-primary)] tracking-tight">
             {title}
           </h2>
         </div>
@@ -42,36 +42,36 @@ export default function FAQAccordion({ items, title = "Frequently Asked Question
           return (
             <div
               key={idx}
-              className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+              className={`rounded-xl border transition-all duration-200 overflow-hidden ${
                 isOpen
-                  ? "bg-white border-[var(--color-primary)]/40 shadow-md shadow-pink-500/5"
-                  : "bg-white/80 border-pink-100 hover:border-pink-200"
+                  ? "bg-white border-[var(--color-primary)]/40 shadow-sm"
+                  : "bg-white border-pink-100 hover:border-pink-200"
               }`}
             >
               <button
                 type="button"
                 onClick={() => toggle(idx)}
                 aria-expanded={isOpen}
-                className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+                className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
               >
-                <span className={`font-serif text-base sm:text-lg font-bold transition-colors ${
+                <span className={`text-sm sm:text-base font-bold transition-colors ${
                   isOpen ? "text-[var(--color-primary)]" : "text-gray-900"
                 }`}>
                   {faq.question}
                 </span>
                 <span
-                  className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                  className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
                     isOpen
                       ? "bg-[var(--color-primary)] text-white rotate-180"
                       : "bg-pink-50 text-[var(--color-primary)]"
                   }`}
                 >
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className="w-3.5 h-3.5" />
                 </span>
               </button>
 
               {isOpen && (
-                <div className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-gray-600 font-light leading-relaxed border-t border-pink-50/50">
+                <div className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 font-normal leading-relaxed border-t border-pink-50">
                   {faq.answer}
                 </div>
               )}

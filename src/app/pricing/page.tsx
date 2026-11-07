@@ -64,59 +64,59 @@ export default function PricingPage() {
   ];
 
   return (
-    <div className="bg-[var(--color-background)] min-h-screen py-16 px-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-[var(--color-background)] min-h-screen py-12 sm:py-16 px-4">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-[var(--color-primary)] block mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
+          <span className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-[var(--color-primary)] block mb-2">
             TRANSPARENT PRICING
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[var(--color-primary)] mb-4">
-            Massage Sessions & Rates
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-[var(--color-primary)] mb-3">
+            Massage Sessions &amp; Rates
           </h1>
-          <p className="text-sm text-gray-600 leading-relaxed font-normal">
+          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
             No hidden costs. 100% genuine spa treatments with sterilized suites, licensed therapists and complimentary amenities across all NCR centres.
           </p>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16">
           {plans.map((plan, idx) => (
             <div
               key={idx}
-              className={`rounded-3xl p-8 flex flex-col justify-between transition-all relative ${
+              className={`rounded-xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 relative ${
                 plan.popular
-                  ? "bg-white border-2 border-[var(--color-primary)] shadow-2xl shadow-pink-200/60 scale-[1.02]"
+                  ? "bg-white border-2 border-[var(--color-primary)] shadow-xl shadow-pink-200/50"
                   : "bg-white border border-pink-100 shadow-sm hover:shadow-lg"
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[var(--color-primary)] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow-sm">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--color-primary)] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-0.5 rounded-full shadow-sm">
                   Most Popular
                 </div>
               )}
 
               <div>
-                <span className="text-xs uppercase tracking-wider text-gray-400 font-semibold block mb-1">
+                <span className="text-[11px] uppercase tracking-wider text-gray-400 font-semibold block mb-1">
                   {plan.category}
                 </span>
-                <h3 className="font-serif text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                   {plan.name}
                 </h3>
 
-                <div className="mb-6 pb-6 border-b border-pink-50">
-                  <span className="font-serif text-4xl font-bold text-[var(--color-primary)]">
+                <div className="mb-5 pb-5 border-b border-pink-50">
+                  <span className="text-3xl sm:text-4xl font-extrabold text-[var(--color-primary)]">
                     {plan.price}
                   </span>
-                  <span className="text-xs text-gray-400 font-medium block mt-1">
+                  <span className="text-[11px] text-gray-400 font-medium block mt-0.5">
                     per {plan.duration}
                   </span>
                 </div>
 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-2.5 mb-6">
                   {plan.features.map((feat, fIdx) => (
-                    <li key={fIdx} className="flex items-start gap-2.5 text-xs text-gray-600 leading-relaxed font-light">
+                    <li key={fIdx} className="flex items-start gap-2 text-xs text-gray-600 leading-relaxed font-light">
                       <div className="w-4 h-4 rounded-full bg-pink-50 text-[var(--color-primary)] flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-2.5 h-2.5 stroke-[3]" />
                       </div>
@@ -128,10 +128,10 @@ export default function PricingPage() {
 
               <a
                 href="tel:+919718892869"
-                className={`w-full py-3.5 rounded-full font-bold text-xs uppercase tracking-wider text-center transition-all flex items-center justify-center gap-2 ${
+                className={`w-full py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider text-center transition-all flex items-center justify-center gap-2 ${
                   plan.popular
-                    ? "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)] shadow-md shadow-pink-500/25"
-                    : "border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white"
+                    ? "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)] shadow-sm"
+                    : "border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white"
                 }`}
               >
                 <Phone className="w-3.5 h-3.5" /> Book Session
@@ -141,15 +141,15 @@ export default function PricingPage() {
         </div>
 
         {/* Quality Guarantee Box */}
-        <div className="border border-pink-200 bg-white rounded-3xl p-8 max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-6 shadow-sm">
-          <div className="w-16 h-16 rounded-full bg-[#fdebf3] text-[var(--color-primary)] flex items-center justify-center shrink-0">
-            <ShieldCheck className="w-8 h-8" />
+        <div className="border border-pink-200 bg-white rounded-xl p-6 sm:p-8 max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-5 shadow-xs">
+          <div className="w-12 h-12 rounded-full bg-[#fdebf3] text-[var(--color-primary)] flex items-center justify-center shrink-0">
+            <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="font-serif text-xl font-bold text-gray-900 mb-1">
-              Hygiene & Privacy Promise
+            <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
+              Hygiene &amp; Privacy Promise
             </h4>
-            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-light">
               Every room undergoes hospital-grade sterilization between bookings. We use single-use disposable sheets, sanitized shower robes, and pure organic therapeutic essential oils.
             </p>
           </div>

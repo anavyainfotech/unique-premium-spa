@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import HeroSection from "@/components/HeroSection";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const homeFaqs = [
   {
@@ -45,202 +46,226 @@ export default function Home() {
       <HeroSection />
 
       {/* Exact Magenta / Pink Stats Strip from Screenshot */}
-      <section className="bg-[var(--color-primary)] text-white py-6 px-4 shadow-sm relative z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="flex items-center gap-4">
-            <div className="w-11 h-11 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+      <section className="bg-[var(--color-primary)] text-white py-5 px-4 shadow-sm relative z-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
               <ShieldCheck className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h4 className="font-bold text-base tracking-wide">Certified Therapists</h4>
-              <p className="text-xs text-white/80 font-light">Trained & experienced hands</p>
+              <h4 className="font-bold text-sm sm:text-base tracking-wide">Certified Therapists</h4>
+              <p className="text-[11px] sm:text-xs text-white/80 font-light">Trained & experienced hands</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="w-11 h-11 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h4 className="font-bold text-base tracking-wide">Premium Oils & Products</h4>
-              <p className="text-xs text-white/80 font-light">Pure, skin-friendly aromatherapy</p>
+              <h4 className="font-bold text-sm sm:text-base tracking-wide">Premium Oils & Products</h4>
+              <p className="text-[11px] sm:text-xs text-white/80 font-light">Pure, skin-friendly aromatherapy</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="w-11 h-11 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
               <ShieldCheck className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h4 className="font-bold text-base tracking-wide">Hygiene & Comfort</h4>
-              <p className="text-xs text-white/80 font-light">Sanitised rooms, fresh linen</p>
+              <h4 className="font-bold text-sm sm:text-base tracking-wide">Hygiene & Comfort</h4>
+              <p className="text-[11px] sm:text-xs text-white/80 font-light">Sanitised rooms, fresh linen</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* What We Offer / Signature Services Section */}
-      <section id="services" className="py-20 px-4 bg-[#fdf8fa]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[var(--color-primary)] font-semibold block mb-2">
+      <section id="services" className="py-12 sm:py-16 px-4 bg-[#fdf8fa]">
+        <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-[var(--color-primary)] font-semibold block mb-1.5">
               WHAT WE OFFER
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-primary)] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--color-primary)] tracking-tight">
               Our Signature Services
             </h2>
-            <p className="text-xs sm:text-sm text-gray-500 max-w-xl mx-auto mt-3 font-normal leading-relaxed">
+            <p className="text-xs sm:text-sm text-gray-500 max-w-xl mx-auto mt-2 font-normal leading-relaxed">
               Six carefully curated treatments — from an everyday full-body massage to our signature two-therapist sandwich massage.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link href="/services/full-body-massage" className="bg-white rounded-3xl overflow-hidden shadow-xs border border-pink-100 hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col group cursor-pointer">
-              <div className="relative h-48 w-full overflow-hidden bg-pink-50">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+            {/* 1. Full Body Massage */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-pink-100 hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group relative cursor-pointer">
+              <Link href="/services/full-body-massage" className="absolute inset-0 z-10" aria-label="Full Body Massage" />
+              <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden bg-pink-50">
                 <Image
                   src="/services/full-body-massage.jpg"
                   alt="Full Body Massage"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-108 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                <span className="absolute top-2 left-2 sm:top-3 sm:left-3 text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2 sm:px-3 py-0.5 sm:py-1 rounded-md border border-white/20">
                   Everyday Reset
                 </span>
               </div>
-              <div className="p-6 text-center flex flex-col items-center">
-                <h3 className="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+              <div className="p-2.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 bg-white">
+                <h3 className="text-xs sm:text-base font-bold tracking-tight text-gray-900 group-hover:text-[var(--color-primary)] transition-colors line-clamp-1 sm:line-clamp-none">
                   Full Body Massage
                 </h3>
-                <p className="text-xs tracking-wider text-[var(--color-primary)] uppercase font-semibold">
-                  60 MIN &nbsp;·&nbsp; ₹1,500
-                </p>
+                <a
+                  href="tel:+919718892869"
+                  className="w-full sm:w-auto shrink-0 relative z-20 px-2.5 sm:px-4 py-1.5 sm:py-2.5 rounded-lg bg-[var(--color-primary)] text-white font-bold text-[10px] sm:text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-1 shadow-sm hover:scale-105"
+                >
+                  <Phone className="w-3 h-3" /> Book Now
+                </a>
               </div>
-            </Link>
+            </div>
 
-            <Link href="/services/complete-sessions" className="bg-white rounded-3xl overflow-hidden shadow-xs border border-pink-100 hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col group cursor-pointer">
-              <div className="relative h-48 w-full overflow-hidden bg-pink-50">
+            {/* 2. Complete Sessions */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-pink-100 hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group relative cursor-pointer">
+              <Link href="/services/complete-sessions" className="absolute inset-0 z-10" aria-label="Complete Sessions" />
+              <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden bg-pink-50">
                 <Image
                   src="/services/complete-sessions.jpg"
                   alt="Complete Sessions"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-108 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                <span className="absolute top-2 left-2 sm:top-3 sm:left-3 text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2 sm:px-3 py-0.5 sm:py-1 rounded-md border border-white/20">
                   Sensory Healing
                 </span>
               </div>
-              <div className="p-6 text-center flex flex-col items-center">
-                <h3 className="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+              <div className="p-2.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 bg-white">
+                <h3 className="text-xs sm:text-base font-bold tracking-tight text-gray-900 group-hover:text-[var(--color-primary)] transition-colors line-clamp-1 sm:line-clamp-none">
                   Complete Sessions
                 </h3>
-                <p className="text-xs tracking-wider text-[var(--color-primary)] uppercase font-semibold">
-                  60 MIN &nbsp;·&nbsp; ₹2,499
-                </p>
+                <a
+                  href="tel:+919718892869"
+                  className="w-full sm:w-auto shrink-0 relative z-20 px-2.5 sm:px-4 py-1.5 sm:py-2.5 rounded-lg bg-[var(--color-primary)] text-white font-bold text-[10px] sm:text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-1 shadow-sm hover:scale-105"
+                >
+                  <Phone className="w-3 h-3" /> Book Now
+                </a>
               </div>
-            </Link>
+            </div>
 
-            <Link href="/services/b2b-massage" className="bg-white rounded-3xl overflow-hidden shadow-xs border border-pink-100 hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col group cursor-pointer">
-              <div className="relative h-48 w-full overflow-hidden bg-pink-50">
+            {/* 3. B2B Massage */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-pink-100 hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group relative cursor-pointer">
+              <Link href="/services/b2b-massage" className="absolute inset-0 z-10" aria-label="B2B Massage" />
+              <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden bg-pink-50">
                 <Image
                   src="/services/b2b-massage.jpg"
                   alt="B2B Massage"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-108 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <span className="absolute top-3 right-3 px-2.5 py-0.5 bg-[var(--color-primary)] text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-sm">
+                <span className="absolute top-2 right-2 sm:top-3 sm:right-3 px-1.5 sm:px-2.5 py-0.5 bg-[var(--color-primary)] text-white text-[8px] sm:text-[10px] font-bold uppercase tracking-wider rounded-md shadow-sm">
                   Popular
                 </span>
-                <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                <span className="absolute top-2 left-2 sm:top-3 sm:left-3 text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2 sm:px-3 py-0.5 sm:py-1 rounded-md border border-white/20">
                   Sensory Gliding
                 </span>
               </div>
-              <div className="p-6 text-center flex flex-col items-center">
-                <h3 className="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+              <div className="p-2.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 bg-white">
+                <h3 className="text-xs sm:text-base font-bold tracking-tight text-gray-900 group-hover:text-[var(--color-primary)] transition-colors line-clamp-1 sm:line-clamp-none">
                   B2B Massage
                 </h3>
-                <p className="text-xs tracking-wider text-[var(--color-primary)] uppercase font-semibold">
-                  60 MIN &nbsp;·&nbsp; ₹2,999
-                </p>
+                <a
+                  href="tel:+919718892869"
+                  className="w-full sm:w-auto shrink-0 relative z-20 px-2.5 sm:px-4 py-1.5 sm:py-2.5 rounded-lg bg-[var(--color-primary)] text-white font-bold text-[10px] sm:text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-1 shadow-sm hover:scale-105"
+                >
+                  <Phone className="w-3 h-3" /> Book Now
+                </a>
               </div>
-            </Link>
+            </div>
 
-            <Link href="/services/sandwich-massage" className="bg-white rounded-3xl overflow-hidden shadow-xs border border-pink-100 hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col group cursor-pointer">
-              <div className="relative h-48 w-full overflow-hidden bg-pink-50">
+            {/* 4. Sandwich Massage */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-pink-100 hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group relative cursor-pointer">
+              <Link href="/services/sandwich-massage" className="absolute inset-0 z-10" aria-label="Sandwich Massage" />
+              <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden bg-pink-50">
                 <Image
                   src="/services/sandwich-massage.jpg"
                   alt="Sandwich Massage"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-108 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <span className="absolute top-3 right-3 px-2.5 py-0.5 bg-[var(--color-primary)] text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-sm">
+                <span className="absolute top-2 right-2 sm:top-3 sm:right-3 px-1.5 sm:px-2.5 py-0.5 bg-[var(--color-primary)] text-white text-[8px] sm:text-[10px] font-bold uppercase tracking-wider rounded-md shadow-sm">
                   Signature
                 </span>
-                <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
-                  Four-Hand Flow
+                <span className="absolute top-2 left-2 sm:top-3 sm:left-3 text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2 sm:px-3 py-0.5 sm:py-1 rounded-md border border-white/20">
+                  Four-Hand
                 </span>
               </div>
-              <div className="p-6 text-center flex flex-col items-center">
-                <h3 className="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+              <div className="p-2.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 bg-white">
+                <h3 className="text-xs sm:text-base font-bold tracking-tight text-gray-900 group-hover:text-[var(--color-primary)] transition-colors line-clamp-1 sm:line-clamp-none">
                   Sandwich Massage
                 </h3>
-                <p className="text-xs tracking-wider text-[var(--color-primary)] uppercase font-semibold">
-                  60 MIN &nbsp;·&nbsp; ₹3,999
-                </p>
+                <a
+                  href="tel:+919718892869"
+                  className="w-full sm:w-auto shrink-0 relative z-20 px-2.5 sm:px-4 py-1.5 sm:py-2.5 rounded-lg bg-[var(--color-primary)] text-white font-bold text-[10px] sm:text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-1 shadow-sm hover:scale-105"
+                >
+                  <Phone className="w-3 h-3" /> Book Now
+                </a>
               </div>
-            </Link>
+            </div>
 
-            <Link href="/services/couple-massage" className="bg-white rounded-3xl overflow-hidden shadow-xs border border-pink-100 hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col group cursor-pointer">
-              <div className="relative h-48 w-full overflow-hidden bg-pink-50">
+            {/* 5. Couple Massage */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-pink-100 hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group relative cursor-pointer">
+              <Link href="/services/couple-massage" className="absolute inset-0 z-10" aria-label="Couple Massage" />
+              <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden bg-pink-50">
                 <Image
                   src="/services/couple-massage.jpg"
                   alt="Couple Massage"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-108 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                <span className="absolute top-2 left-2 sm:top-3 sm:left-3 text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2 sm:px-3 py-0.5 sm:py-1 rounded-md border border-white/20">
                   VIP Suite
                 </span>
               </div>
-              <div className="p-6 text-center flex flex-col items-center">
-                <h3 className="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+              <div className="p-2.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 bg-white">
+                <h3 className="text-xs sm:text-base font-bold tracking-tight text-gray-900 group-hover:text-[var(--color-primary)] transition-colors line-clamp-1 sm:line-clamp-none">
                   Couple Massage
                 </h3>
-                <p className="text-xs tracking-wider text-[var(--color-primary)] uppercase font-semibold">
-                  60 MIN &nbsp;·&nbsp; ₹6,000
-                </p>
+                <a
+                  href="tel:+919718892869"
+                  className="w-full sm:w-auto shrink-0 relative z-20 px-2.5 sm:px-4 py-1.5 sm:py-2.5 rounded-lg bg-[var(--color-primary)] text-white font-bold text-[10px] sm:text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-1 shadow-sm hover:scale-105"
+                >
+                  <Phone className="w-3 h-3" /> Book Now
+                </a>
               </div>
-            </Link>
+            </div>
 
-            <Link href="/services/thai-massage" className="bg-white rounded-3xl overflow-hidden shadow-xs border border-pink-100 hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all flex flex-col group cursor-pointer">
-              <div className="relative h-48 w-full overflow-hidden bg-pink-50">
+            {/* 6. Thai Massage */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-pink-100 hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group relative cursor-pointer">
+              <Link href="/services/thai-massage" className="absolute inset-0 z-10" aria-label="Thai Massage" />
+              <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden bg-pink-50">
                 <Image
                   src="/services/thai-massage.jpg"
                   alt="Thai Massage"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-108 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                <span className="absolute top-2 left-2 sm:top-3 sm:left-3 text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2 sm:px-3 py-0.5 sm:py-1 rounded-md border border-white/20">
                   Authentic Zen
                 </span>
               </div>
-              <div className="p-6 text-center flex flex-col items-center">
-                <h3 className="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+              <div className="p-2.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 bg-white">
+                <h3 className="text-xs sm:text-base font-bold tracking-tight text-gray-900 group-hover:text-[var(--color-primary)] transition-colors line-clamp-1 sm:line-clamp-none">
                   Thai Massage
                 </h3>
-                <p className="text-xs tracking-wider text-[var(--color-primary)] uppercase font-semibold">
-                  60 MIN &nbsp;·&nbsp; ₹2,500
-                </p>
+                <a
+                  href="tel:+919718892869"
+                  className="w-full sm:w-auto shrink-0 relative z-20 px-2.5 sm:px-4 py-1.5 sm:py-2.5 rounded-lg bg-[var(--color-primary)] text-white font-bold text-[10px] sm:text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-1 shadow-sm hover:scale-105"
+                >
+                  <Phone className="w-3 h-3" /> Book Now
+                </a>
               </div>
-            </Link>
+            </div>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 sm:mt-10">
             <a
               href="/pricing"
               className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[var(--color-primary)] hover:underline"
@@ -248,128 +273,303 @@ export default function Home() {
               View full pricing <ArrowRight className="w-4 h-4" />
             </a>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-7 relative flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-[560px]">
-                <div className="absolute -top-4 -left-4 w-28 h-28 border-t-2 border-l-2 border-[var(--color-primary)] rounded-tl-3xl pointer-events-none" />
-                <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-lg border border-pink-100 bg-[#faeef4]">
+      <section id="about" className="py-12 sm:py-16 px-4 bg-white relative overflow-hidden">
+        <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+            {/* Visual Media Showcase */}
+            <div className="lg:col-span-6 relative flex justify-center">
+              <div className="relative w-full max-w-[540px]">
+                {/* Decorative background glow badge */}
+                <div className="absolute -inset-2 bg-gradient-to-r from-pink-200/50 to-rose-100/50 rounded-2xl blur-lg -z-10" />
+                
+                <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-md border border-pink-100 bg-[#faeef4]">
                   <Image
                     src="/spa-oil-generated.png"
                     alt="Spa essential oil treatment"
                     fill
                     priority
-                    className="object-cover"
+                    className="object-cover hover:scale-105 transition-transform duration-700"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  
+                  {/* Floating badge inside image */}
+                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between text-white backdrop-blur-md bg-black/40 p-2.5 sm:p-3 rounded-lg border border-white/20">
+                    <div className="flex items-center gap-2 sm:gap-2.5">
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[var(--color-primary)] flex items-center justify-center shrink-0">
+                        <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+                      </div>
+                      <div>
+                        <span className="text-[11px] sm:text-xs font-bold block leading-tight">100% Herbal Aromatherapy</span>
+                        <span className="text-[9px] sm:text-[10px] text-white/80 font-normal">Pure cold-pressed therapeutic oils</span>
+                      </div>
+                    </div>
+                    <span className="text-[10px] sm:text-[11px] font-bold text-pink-200">Delhi NCR</span>
+                  </div>
+                </div>
+
+                {/* Floating Experience Badge */}
+                <div className="hidden sm:flex absolute -top-4 -right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-pink-100 shadow-lg items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-pink-50 text-[var(--color-primary)] flex items-center justify-center font-bold text-base shrink-0">
+                    5★
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold text-gray-900 block leading-tight">Top Rated Spa Chain</span>
+                    <span className="text-[10px] text-gray-500 font-normal">10,000+ Happy Guests</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-5 text-left">
-              <span className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-[var(--color-primary)] block mb-3">
-                ABOUT US
+            {/* Content Column */}
+            <div className="lg:col-span-6 text-left">
+              <span className="text-[10px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-[var(--color-primary)] block mb-1.5">
+                ABOUT UNIQUE PREMIUM SPA
               </span>
-              <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-bold text-[var(--color-primary)] leading-[1.22] mb-4">
-                A Little Calm, Wherever You Are in <br className="hidden sm:inline" />
-                Delhi NCR
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--color-primary)] leading-[1.2] mb-3 sm:mb-4">
+                A Little Calm, Wherever You Are in Delhi NCR
               </h2>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-7 font-normal max-w-xl">
-                Unique Premium Spa brings professional, hygienic and deeply relaxing massage therapy to five convenient locations — from CP to Vasant Kunj to Gurgaon. Every session is delivered by trained therapists with premium oils and fresh linens.
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-5 sm:mb-6 font-normal">
+                Unique Premium Spa brings certified, hygienic and deeply rejuvenating massage therapies to 7 prime destinations across Delhi NCR — Aerocity, Connaught Place, Gurgaon, New Friends Colony and Vasant Kunj. Every private treatment suite features sanitized warm linen, steam showers, and experienced therapists committed to your peace of mind.
               </p>
 
-              <div className="grid grid-cols-3 gap-3.5 mb-7 max-w-md">
-                <div className="bg-[#fcebf2] rounded-2xl py-3.5 px-3 text-center">
-                  <span className="font-serif text-2xl sm:text-3xl font-bold text-[var(--color-primary)] block">7</span>
-                  <span className="text-[11px] text-gray-500 font-medium tracking-wide">Outlets</span>
+              {/* 3 Key Feature Cards rounded-xl */}
+              <div className="grid grid-cols-3 gap-2 sm:gap-3.5 mb-5 sm:mb-7">
+                <div className="bg-[#fdf3f8] border border-pink-100/70 rounded-xl p-2.5 sm:p-3.5 text-center transition-all hover:bg-white hover:shadow-md hover:border-pink-200">
+                  <span className="text-xl sm:text-3xl font-extrabold text-[var(--color-primary)] block mb-0.5">7</span>
+                  <span className="text-[11px] sm:text-xs font-bold text-gray-800 block leading-tight">Prime Outlets</span>
+                  <span className="text-[9px] sm:text-[10px] text-gray-500 font-normal hidden sm:block">Across Delhi &amp; Gurgaon</span>
                 </div>
-                <div className="bg-[#fcebf2] rounded-2xl py-3.5 px-3 text-center">
-                  <span className="font-serif text-2xl sm:text-3xl font-bold text-[var(--color-primary)] block">6+</span>
-                  <span className="text-[11px] text-gray-500 font-medium tracking-wide">Services</span>
+                <div className="bg-[#fdf3f8] border border-pink-100/70 rounded-xl p-2.5 sm:p-3.5 text-center transition-all hover:bg-white hover:shadow-md hover:border-pink-200">
+                  <span className="text-xl sm:text-3xl font-extrabold text-[var(--color-primary)] block mb-0.5">25+</span>
+                  <span className="text-[11px] sm:text-xs font-bold text-gray-800 block leading-tight">Expert Staff</span>
+                  <span className="text-[9px] sm:text-[10px] text-gray-500 font-normal hidden sm:block">Certified &amp; Verified</span>
                 </div>
-                <div className="bg-[#fcebf2] rounded-2xl py-3.5 px-3 text-center">
-                  <span className="font-serif text-2xl sm:text-3xl font-bold text-[var(--color-primary)] block">1</span>
-                  <span className="text-[11px] text-gray-500 font-medium tracking-wide">Helpline</span>
+                <div className="bg-[#fdf3f8] border border-pink-100/70 rounded-xl p-2.5 sm:p-3.5 text-center transition-all hover:bg-white hover:shadow-md hover:border-pink-200">
+                  <span className="text-xl sm:text-3xl font-extrabold text-[var(--color-primary)] block mb-0.5">100%</span>
+                  <span className="text-[11px] sm:text-xs font-bold text-gray-800 block leading-tight">Hygiene</span>
+                  <span className="text-[9px] sm:text-[10px] text-gray-500 font-normal hidden sm:block">Private VIP Suites</span>
                 </div>
               </div>
 
-              <a
-                href="/about"
-                className="inline-block px-7 py-3 rounded-full border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-semibold text-xs tracking-wider uppercase hover:bg-[var(--color-primary)] hover:text-white transition-all"
-              >
-                KNOW MORE ABOUT US
-              </a>
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+                <a
+                  href="/about"
+                  className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-[var(--color-primary)] text-white font-bold text-[11px] sm:text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center gap-1.5 sm:gap-2 shadow-sm hover:scale-105"
+                >
+                  Know More About Us <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href="tel:+919718892869"
+                  className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg border border-[var(--color-primary)] text-[var(--color-primary)] font-bold text-[11px] sm:text-xs tracking-wider uppercase hover:bg-pink-50 transition-all flex items-center gap-1.5 sm:gap-2"
+                >
+                  <Phone className="w-3.5 h-3.5" /> +91 97188 92869
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Guest Favourites / Most Booked Sessions */}
-      <section id="pricing" className="py-20 px-4 bg-[#fdf2f7]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[var(--color-primary)] font-semibold block mb-2">
-              GUEST FAVOURITES
+      <section id="pricing" className="py-12 sm:py-16 px-4 bg-[#fdf2f7] relative">
+        <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-[var(--color-primary)] font-semibold block mb-1.5">
+              GUEST FAVOURITES &amp; PRICING
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-primary)] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--color-primary)] tracking-tight">
               Most Booked Sessions
             </h2>
+            <p className="text-xs sm:text-sm text-gray-500 max-w-xl mx-auto mt-2 font-normal leading-relaxed">
+              Transparent, all-inclusive pricing with no hidden charges. Every session includes private suite amenities and fresh warm linen.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-            <div className="bg-white rounded-3xl p-8 sm:p-10 text-center shadow-lg shadow-pink-200/50 border border-pink-100 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-7 w-full">
+            {/* 1. Full Body Massage */}
+            <div className="bg-white rounded-xl p-6 sm:p-7 shadow-sm hover:shadow-xl border border-pink-100 hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group relative">
               <div>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-gray-900 mb-2">Full Body Massage</h3>
-                <p className="text-[11px] uppercase tracking-widest text-gray-400 font-medium mb-8">EVERYDAY FULL-BODY RESET</p>
-                <div className="mb-8">
-                  <div className="font-serif text-4xl sm:text-5xl font-bold text-[var(--color-primary)] mb-1">₹1,500</div>
-                  <span className="text-xs text-gray-400 font-normal">60 min session</span>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--color-primary)] bg-pink-50 px-3 py-1 rounded-md">
+                    Everyday Reset
+                  </span>
+                  <span className="text-xs text-gray-400 font-medium">60 MIN</span>
                 </div>
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+                  Full Body Massage
+                </h3>
+                <p className="text-xs text-gray-500 leading-relaxed mb-6 font-normal">
+                  Gentle rhythmic head-to-toe strokes targeting stiff muscle knots and relieving daily work fatigue.
+                </p>
+
+                <div className="bg-[#fdf8fa] rounded-lg p-4 border border-pink-100/60 mb-6">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-[var(--color-primary)]">₹1,500</span>
+                    <span className="text-xs text-gray-400 font-normal">/ all-inclusive</span>
+                  </div>
+                  <span className="text-[11px] text-gray-500 font-normal block mt-1">
+                    Warm herbal oil + private ensuite shower
+                  </span>
+                </div>
+
+                <ul className="space-y-2.5 text-xs text-gray-600 mb-6 font-normal">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0" />
+                    <span>Certified female/male therapist choice</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0" />
+                    <span>Head, neck, back, limbs &amp; foot focus</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0" />
+                    <span>Complimentary herbal tea post-session</span>
+                  </li>
+                </ul>
               </div>
-              <a
-                href="tel:+919718892869"
-                className="w-full py-3.5 rounded-full bg-[var(--color-primary)] text-white font-bold text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all shadow-md shadow-pink-500/25"
-              >
-                BOOK NOW
-              </a>
+
+              <div className="space-y-2.5 pt-2 border-t border-pink-100/80">
+                <a
+                  href="tel:+919718892869"
+                  className="w-full py-3 rounded-lg bg-[var(--color-primary)] text-white font-bold text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02]"
+                >
+                  <Phone className="w-3.5 h-3.5" /> Book Session
+                </a>
+                <Link
+                  href="/services/full-body-massage"
+                  className="w-full py-2.5 rounded-lg text-center text-xs font-semibold text-gray-600 hover:text-[var(--color-primary)] hover:bg-pink-50 transition-colors block"
+                >
+                  View Details &amp; FAQs →
+                </Link>
+              </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 sm:p-10 text-center shadow-lg shadow-pink-200/50 border border-pink-100 flex flex-col justify-between hover:-translate-y-1 transition-transform">
-              <div>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-gray-900 mb-2">B2B Massage</h3>
-                <p className="text-[11px] uppercase tracking-widest text-gray-400 font-medium mb-8">DEEP, IMMERSIVE BODY WORK</p>
-                <div className="mb-8">
-                  <div className="font-serif text-4xl sm:text-5xl font-bold text-[var(--color-primary)] mb-1">₹2,999</div>
-                  <span className="text-xs text-gray-400 font-normal">60 min session</span>
-                </div>
+            {/* 2. B2B Massage (Featured / Popular) */}
+            <div className="bg-white rounded-xl p-6 sm:p-7 shadow-lg shadow-pink-300/30 border-2 border-[var(--color-primary)] transition-all duration-300 flex flex-col justify-between group relative sm:-translate-y-2">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[var(--color-primary)] text-white px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm">
+                Most Popular Choice
               </div>
-              <a
-                href="tel:+919718892869"
-                className="w-full py-3.5 rounded-full bg-[var(--color-primary)] text-white font-bold text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all shadow-md shadow-pink-500/25"
-              >
-                BOOK NOW
-              </a>
+
+              <div>
+                <div className="flex items-center justify-between mb-4 pt-1">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--color-primary)] bg-pink-50 px-3 py-1 rounded-md">
+                    Sensory Gliding
+                  </span>
+                  <span className="text-xs text-gray-400 font-medium">60 MIN</span>
+                </div>
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+                  B2B Massage
+                </h3>
+                <p className="text-xs text-gray-500 leading-relaxed mb-6 font-normal">
+                  Sensory body-to-body therapy using warm aromatic organic oils for deep, immersive relaxation.
+                </p>
+
+                <div className="bg-[#fff0f6] rounded-lg p-4 border border-pink-200/80 mb-6">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-[var(--color-primary)]">₹2,999</span>
+                    <span className="text-xs text-gray-400 font-normal">/ all-inclusive</span>
+                  </div>
+                  <span className="text-[11px] text-[var(--color-primary)] font-medium block mt-1">
+                    VIP room + ensuite hot shower &amp; steam
+                  </span>
+                </div>
+
+                <ul className="space-y-2.5 text-xs text-gray-600 mb-6 font-normal">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0" />
+                    <span>Complete full-body therapeutic gliding</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0" />
+                    <span>Premium hypoallergenic massage oil</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0" />
+                    <span>Private sanitized suite &amp; total discretion</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-2.5 pt-2 border-t border-pink-100/80">
+                <a
+                  href="tel:+919718892869"
+                  className="w-full py-3 rounded-lg bg-[var(--color-primary)] text-white font-bold text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-2 shadow-md shadow-pink-500/25 hover:scale-[1.02]"
+                >
+                  <Phone className="w-3.5 h-3.5" /> Book Session
+                </a>
+                <Link
+                  href="/services/b2b-massage"
+                  className="w-full py-2.5 rounded-lg text-center text-xs font-semibold text-gray-600 hover:text-[var(--color-primary)] hover:bg-pink-50 transition-colors block"
+                >
+                  View Details &amp; FAQs →
+                </Link>
+              </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 sm:p-10 text-center shadow-lg shadow-pink-200/50 border border-pink-100 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+            {/* 3. Sandwich Massage */}
+            <div className="bg-white rounded-xl p-6 sm:p-7 shadow-sm hover:shadow-xl border border-pink-100 hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group relative">
               <div>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-gray-900 mb-2">Sandwich Massage</h3>
-                <p className="text-[11px] uppercase tracking-widest text-gray-400 font-medium mb-8">TWO THERAPISTS, FOUR HANDS</p>
-                <div className="mb-8">
-                  <div className="font-serif text-4xl sm:text-5xl font-bold text-[var(--color-primary)] mb-1">₹3,999</div>
-                  <span className="text-xs text-gray-400 font-normal">60 min session</span>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--color-primary)] bg-pink-50 px-3 py-1 rounded-md">
+                    Four-Hand Signature
+                  </span>
+                  <span className="text-xs text-gray-400 font-medium">60 MIN</span>
                 </div>
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+                  Sandwich Massage
+                </h3>
+                <p className="text-xs text-gray-500 leading-relaxed mb-6 font-normal">
+                  Two therapists synchronized in choreographed rhythm for an incomparable, multi-sensory bliss.
+                </p>
+
+                <div className="bg-[#fdf8fa] rounded-lg p-4 border border-pink-100/60 mb-6">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-[var(--color-primary)]">₹3,999</span>
+                    <span className="text-xs text-gray-400 font-normal">/ all-inclusive</span>
+                  </div>
+                  <span className="text-[11px] text-gray-500 font-normal block mt-1">
+                    2 therapists simultaneous + VIP room
+                  </span>
+                </div>
+
+                <ul className="space-y-2.5 text-xs text-gray-600 mb-6 font-normal">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0" />
+                    <span>Choreographed dual-therapist pressure</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0" />
+                    <span>Double the tension relief &amp; endorphin release</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0" />
+                    <span>Private shower, steam &amp; wellness drinks</span>
+                  </li>
+                </ul>
               </div>
-              <a
-                href="tel:+919718892869"
-                className="w-full py-3.5 rounded-full bg-[var(--color-primary)] text-white font-bold text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all shadow-md shadow-pink-500/25"
-              >
-                BOOK NOW
-              </a>
+
+              <div className="space-y-2.5 pt-2 border-t border-pink-100/80">
+                <a
+                  href="tel:+919718892869"
+                  className="w-full py-3 rounded-lg bg-[var(--color-primary)] text-white font-bold text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02]"
+                >
+                  <Phone className="w-3.5 h-3.5" /> Book Session
+                </a>
+                <Link
+                  href="/services/sandwich-massage"
+                  className="w-full py-2.5 rounded-lg text-center text-xs font-semibold text-gray-600 hover:text-[var(--color-primary)] hover:bg-pink-50 transition-colors block"
+                >
+                  View Details &amp; FAQs →
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -381,141 +581,244 @@ export default function Home() {
               See all packages <ArrowRight className="w-4 h-4" />
             </a>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Find Us Near You / 7 Outlets Section */}
-      <section id="outlets" className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[var(--color-primary)] font-semibold block mb-2">
+      <section id="outlets" className="py-12 sm:py-16 px-4 bg-white">
+        <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-[var(--color-primary)] font-semibold block mb-1.5">
             FIND US NEAR YOU
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-primary)] tracking-tight mb-8">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--color-primary)] tracking-tight mb-3 sm:mb-4">
             7 Outlets Across Delhi NCR
           </h2>
+          <p className="text-xs sm:text-sm text-gray-500 max-w-xl mx-auto mb-7 sm:mb-10 font-normal leading-relaxed">
+            Conveniently located luxury spa centres across Delhi &amp; Gurgaon with VIP treatment suites and private showers.
+          </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 w-full mb-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3.5 mb-6 sm:mb-8">
             <a
               href="tel:+919718892869"
-              className="px-5 py-2.5 rounded-full border border-pink-200 bg-white hover:border-[var(--color-primary)] hover:bg-[#fff0f6] text-gray-800 text-xs sm:text-sm font-medium flex items-center gap-2 shadow-xs transition-all"
+              className="p-3 sm:p-4 rounded-xl border border-pink-100 bg-[#fdfafb] hover:border-[var(--color-primary)] hover:bg-white hover:shadow-md transition-all text-center flex flex-col items-center group cursor-pointer"
             >
-              <MapPin className="w-3.5 h-3.5 text-[var(--color-primary)]" />
-              <span>Spa in Aerocity</span>
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-pink-100/80 text-[var(--color-primary)] flex items-center justify-center mb-2 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </div>
+              <span className="text-[11px] sm:text-xs font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors block leading-tight">
+                Aerocity
+              </span>
+              <span className="text-[9px] sm:text-[10px] text-gray-400 font-normal mt-0.5">Near IGI Airport</span>
             </a>
 
             <a
               href="tel:+919718892869"
-              className="px-5 py-2.5 rounded-full border border-pink-200 bg-white hover:border-[var(--color-primary)] hover:bg-[#fff0f6] text-gray-800 text-xs sm:text-sm font-medium flex items-center gap-2 shadow-xs transition-all"
+              className="p-3 sm:p-4 rounded-xl border border-pink-100 bg-[#fdfafb] hover:border-[var(--color-primary)] hover:bg-white hover:shadow-md transition-all text-center flex flex-col items-center group cursor-pointer"
             >
-              <MapPin className="w-3.5 h-3.5 text-[var(--color-primary)]" />
-              <span>Spa in NFC (New Friends Colony)</span>
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-pink-100/80 text-[var(--color-primary)] flex items-center justify-center mb-2 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </div>
+              <span className="text-[11px] sm:text-xs font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors block leading-tight">
+                NFC (New Friends)
+              </span>
+              <span className="text-[9px] sm:text-[10px] text-gray-400 font-normal mt-0.5">South Delhi Hub</span>
             </a>
 
             <a
               href="tel:+919718892869"
-              className="px-5 py-2.5 rounded-full border border-pink-200 bg-white hover:border-[var(--color-primary)] hover:bg-[#fff0f6] text-gray-800 text-xs sm:text-sm font-medium flex items-center gap-2 shadow-xs transition-all"
+              className="p-3 sm:p-4 rounded-xl border border-pink-100 bg-[#fdfafb] hover:border-[var(--color-primary)] hover:bg-white hover:shadow-md transition-all text-center flex flex-col items-center group cursor-pointer"
             >
-              <MapPin className="w-3.5 h-3.5 text-[var(--color-primary)]" />
-              <span>Spa in CP (Connaught Place)</span>
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-pink-100/80 text-[var(--color-primary)] flex items-center justify-center mb-2 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </div>
+              <span className="text-[11px] sm:text-xs font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors block leading-tight">
+                Connaught Place
+              </span>
+              <span className="text-[9px] sm:text-[10px] text-gray-400 font-normal mt-0.5">Central Delhi</span>
             </a>
 
             <a
               href="tel:+919718892869"
-              className="px-5 py-2.5 rounded-full border border-pink-200 bg-white hover:border-[var(--color-primary)] hover:bg-[#fff0f6] text-gray-800 text-xs sm:text-sm font-medium flex items-center gap-2 shadow-xs transition-all"
+              className="p-3 sm:p-4 rounded-xl border border-pink-100 bg-[#fdfafb] hover:border-[var(--color-primary)] hover:bg-white hover:shadow-md transition-all text-center flex flex-col items-center group cursor-pointer"
             >
-              <MapPin className="w-3.5 h-3.5 text-[var(--color-primary)]" />
-              <span>Spa in Gurgaon</span>
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-pink-100/80 text-[var(--color-primary)] flex items-center justify-center mb-2 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </div>
+              <span className="text-[11px] sm:text-xs font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors block leading-tight">
+                Gurgaon
+              </span>
+              <span className="text-[9px] sm:text-[10px] text-gray-400 font-normal mt-0.5">Cyber City</span>
             </a>
 
             <a
               href="tel:+919718892869"
-              className="px-5 py-2.5 rounded-full border border-pink-200 bg-white hover:border-[var(--color-primary)] hover:bg-[#fff0f6] text-gray-800 text-xs sm:text-sm font-medium flex items-center gap-2 shadow-xs transition-all"
+              className="p-3 sm:p-4 rounded-xl border border-pink-100 bg-[#fdfafb] hover:border-[var(--color-primary)] hover:bg-white hover:shadow-md transition-all text-center flex flex-col items-center group cursor-pointer col-span-2 sm:col-span-1"
             >
-              <MapPin className="w-3.5 h-3.5 text-[var(--color-primary)]" />
-              <span>Spa in Vasant Kunj</span>
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-pink-100/80 text-[var(--color-primary)] flex items-center justify-center mb-2 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </div>
+              <span className="text-[11px] sm:text-xs font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors block leading-tight">
+                Vasant Kunj
+              </span>
+              <span className="text-[9px] sm:text-[10px] text-gray-400 font-normal mt-0.5">South Delhi Malls</span>
             </a>
           </div>
 
-          <p className="text-xs sm:text-sm text-gray-500">
-            Call <a href="tel:+919718892869" className="text-[var(--color-primary)] font-semibold hover:underline">+91 97188 92869</a> and we will connect you to the nearest centre.
-          </p>
-        </div>
+          <div className="inline-flex items-center gap-2 p-1.5 px-4 rounded-full bg-pink-50 border border-pink-200 text-xs text-gray-700">
+            <span>Call for nearest branch:</span>
+            <a href="tel:+919718892869" className="text-[var(--color-primary)] font-bold hover:underline">
+              +91 97188 92869
+            </a>
+          </div>
+        </ScrollReveal>
       </section>
 
-      {/* Comprehensive SEO Content Section for Google Ranking */}
-      <section className="py-20 px-4 bg-white border-t border-pink-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <span className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[var(--color-primary)] font-semibold block mb-2 text-center">
+      {/* Comprehensive SEO Content Section for Google Ranking - Full Width Luxury Editorial */}
+      <section className="py-12 sm:py-16 px-4 bg-white border-t border-pink-100">
+        <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[var(--color-primary)] font-semibold block mb-1.5">
               PREMIER WELLNESS &amp; SPA THERAPIES
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-8 text-center">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--color-primary)] tracking-tight leading-tight mb-3">
               The Leading Luxury Spa &amp; Massage Destination in Delhi NCR
             </h2>
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
+              In the heart of India&apos;s most bustling metropolitan region, <strong className="text-gray-900 font-semibold">Unique Premium Spa</strong> stands as a serene sanctuary designed for comprehensive physical renewal and cognitive decompression across 7 prime locations.
+            </p>
+          </div>
 
-            <div className="space-y-6 text-sm sm:text-base text-gray-700 font-light leading-relaxed">
-              <p>
-                In the heart of India&apos;s most bustling metropolitan region, <strong className="text-gray-900 font-semibold">Unique Premium Spa</strong> stands as a serene sanctuary designed for comprehensive physical renewal and cognitive decompression. Whether you spend strenuous work weeks commuting through Gurgaon corporate corridors or running high-pressure schedules across Delhi, our therapies are scientifically crafted to release deep-seated myofascial knots, soothe chronic cervical tension, and restore internal harmony.
-              </p>
-
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[var(--color-primary)] pt-4">
-                Tailored Massage Modalities for Every Lifestyle
-              </h3>
-              <p>
-                Every individual has unique wellness requirements. That is why our spa menu features a versatile spectrum of treatments:
-              </p>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-                <li className="bg-[#faeef4]/50 p-4 rounded-2xl border border-pink-100">
-                  <strong className="text-gray-900 block font-serif font-bold text-base mb-1">Swedish &amp; Full Body Massage:</strong>
-                  Gentle rhythmic gliding strokes (effleurage) combined with warm organic botanical oils to enhance lymphatic drainage, improve circulation, and calm the autonomic nervous system.
-                </li>
-                <li className="bg-[#faeef4]/50 p-4 rounded-2xl border border-pink-100">
-                  <strong className="text-gray-900 block font-serif font-bold text-base mb-1">Deep Tissue &amp; B2B Therapy:</strong>
-                  Concentrated myofascial pressure designed to penetrate deep muscle tissue, releasing stubborn adhesions and chronic stiffness caused by sedentary office postures.
-                </li>
-                <li className="bg-[#faeef4]/50 p-4 rounded-2xl border border-pink-100">
-                  <strong className="text-gray-900 block font-serif font-bold text-base mb-1">Sandwich Four-Hand Therapy:</strong>
-                  Our signature synchronized treatment where two certified therapists work concurrently in mirrored harmony to facilitate profound theta-wave neurological relaxation.
-                </li>
-                <li className="bg-[#faeef4]/50 p-4 rounded-2xl border border-pink-100">
-                  <strong className="text-gray-900 block font-serif font-bold text-base mb-1">VIP Couples Suite Sessions:</strong>
-                  Private side-by-side suites equipped with dual tables, floral aromatherapy hydrotherapy baths, and dedicated individual therapists for mutual relaxation.
-                </li>
-              </ul>
-
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[var(--color-primary)] pt-4">
-                Strict Hygiene Standards &amp; Certified Professionalism
-              </h3>
-              <p>
-                At Unique Premium Spa, client comfort, hygiene, and complete privacy are our utmost priorities. All our 7 spa locations across <strong className="text-gray-900 font-semibold">Aerocity, Connaught Place, New Friends Colony, Gurgaon, and Vasant Kunj</strong> feature sanitized private treatment rooms, hospital-grade fresh linens, disposable spa essentials, and ensuite hot shower and steam amenities. Every therapist on our team undergoes rigorous continuous training in human anatomy, therapeutic pressure modulation, and polite client etiquette.
-              </p>
-
-              <div className="bg-pink-50/60 p-6 rounded-3xl border border-pink-200 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div>
-                  <h4 className="font-serif text-lg font-bold text-gray-900 mb-1">Need assistance choosing the ideal therapy?</h4>
-                  <p className="text-xs sm:text-sm text-gray-600">Our concierge is available 24/7 to recommend treatments based on your body condition.</p>
+          {/* 4 Cards Grid with Related Images - Mobile 2 Cols, Desktop 4 Cols */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+            {/* 1. Swedish & Full Body */}
+            <div className="bg-white rounded-xl overflow-hidden border border-pink-100 hover:border-[var(--color-primary)]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden bg-pink-50">
+                  <Image
+                    src="/services/full-body-massage.jpg"
+                    alt="Swedish & Full Body Massage"
+                    fill
+                    className="object-cover group-hover:scale-108 transition-transform duration-500"
+                  />
+                  <span className="absolute top-2 left-2 sm:top-3 sm:left-3 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2 sm:px-2.5 py-0.5 rounded-md border border-white/20">
+                    Effleurage
+                  </span>
                 </div>
+              </div>
+
+              <div className="p-2.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 bg-white">
+                <h3 className="text-xs sm:text-base font-bold tracking-tight text-gray-900 group-hover:text-[var(--color-primary)] transition-colors leading-tight line-clamp-1 sm:line-clamp-none">
+                  Swedish Massage
+                </h3>
                 <a
                   href="tel:+919718892869"
-                  className="px-6 py-3 rounded-full bg-[var(--color-primary)] text-white text-xs font-bold uppercase tracking-wider hover:bg-[var(--color-primary-hover)] shrink-0 transition-all shadow-md"
+                  className="w-full sm:w-auto shrink-0 relative z-20 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg bg-[var(--color-primary)] text-white font-bold text-[10px] sm:text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-1 shadow-sm hover:scale-105"
                 >
-                  Call +91 97188 92869
+                  <Phone className="w-3 h-3" /> Book
+                </a>
+              </div>
+            </div>
+
+            {/* 2. Deep Tissue & B2B */}
+            <div className="bg-white rounded-xl overflow-hidden border border-pink-100 hover:border-[var(--color-primary)]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden bg-pink-50">
+                  <Image
+                    src="/services/b2b-massage.jpg"
+                    alt="Deep Tissue & B2B Therapy"
+                    fill
+                    className="object-cover group-hover:scale-108 transition-transform duration-500"
+                  />
+                  <span className="absolute top-2 left-2 sm:top-3 sm:left-3 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2 sm:px-2.5 py-0.5 rounded-md border border-white/20">
+                    Myofascial
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-2.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 bg-white">
+                <h3 className="text-xs sm:text-base font-bold tracking-tight text-gray-900 group-hover:text-[var(--color-primary)] transition-colors leading-tight line-clamp-1 sm:line-clamp-none">
+                  B2B Therapy
+                </h3>
+                <a
+                  href="tel:+919718892869"
+                  className="w-full sm:w-auto shrink-0 relative z-20 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg bg-[var(--color-primary)] text-white font-bold text-[10px] sm:text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-1 shadow-sm hover:scale-105"
+                >
+                  <Phone className="w-3 h-3" /> Book
+                </a>
+              </div>
+            </div>
+
+            {/* 3. Sandwich Four-Hand */}
+            <div className="bg-white rounded-xl overflow-hidden border border-pink-100 hover:border-[var(--color-primary)]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden bg-pink-50">
+                  <Image
+                    src="/services/sandwich-massage.jpg"
+                    alt="Sandwich Four-Hand Therapy"
+                    fill
+                    className="object-cover group-hover:scale-108 transition-transform duration-500"
+                  />
+                  <span className="absolute top-2 left-2 sm:top-3 sm:left-3 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2 sm:px-2.5 py-0.5 rounded-md border border-white/20">
+                    Four-Hand
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-2.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 bg-white">
+                <h3 className="text-xs sm:text-base font-bold tracking-tight text-gray-900 group-hover:text-[var(--color-primary)] transition-colors leading-tight line-clamp-1 sm:line-clamp-none">
+                  Sandwich Flow
+                </h3>
+                <a
+                  href="tel:+919718892869"
+                  className="w-full sm:w-auto shrink-0 relative z-20 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg bg-[var(--color-primary)] text-white font-bold text-[10px] sm:text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-1 shadow-sm hover:scale-105"
+                >
+                  <Phone className="w-3 h-3" /> Book
+                </a>
+              </div>
+            </div>
+
+            {/* 4. VIP Couples Suite */}
+            <div className="bg-white rounded-xl overflow-hidden border border-pink-100 hover:border-[var(--color-primary)]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden bg-pink-50">
+                  <Image
+                    src="/services/couple-massage.jpg"
+                    alt="VIP Couples Suite Sessions"
+                    fill
+                    className="object-cover group-hover:scale-108 transition-transform duration-500"
+                  />
+                  <span className="absolute top-2 left-2 sm:top-3 sm:left-3 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-white bg-black/40 backdrop-blur-md px-2 sm:px-2.5 py-0.5 rounded-md border border-white/20">
+                    VIP Suite
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-2.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 bg-white">
+                <h3 className="text-xs sm:text-base font-bold tracking-tight text-gray-900 group-hover:text-[var(--color-primary)] transition-colors leading-tight line-clamp-1 sm:line-clamp-none">
+                  Couples Suite
+                </h3>
+                <a
+                  href="tel:+919718892869"
+                  className="w-full sm:w-auto shrink-0 relative z-20 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg bg-[var(--color-primary)] text-white font-bold text-[10px] sm:text-xs tracking-wider uppercase hover:bg-[var(--color-primary-hover)] transition-all flex items-center justify-center gap-1 shadow-sm hover:scale-105"
+                >
+                  <Phone className="w-3 h-3" /> Book
                 </a>
               </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Frequently Asked Questions Section on Homepage */}
-      <section className="py-20 px-4 bg-[#fdf8fa] border-t border-pink-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 px-4 bg-[#fdf8fa] border-t border-pink-100">
+        <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FAQAccordion
             items={homeFaqs}
             title="Frequently Asked Questions"
             subtitle="EVERYTHING YOU NEED TO KNOW"
           />
-        </div>
+        </ScrollReveal>
       </section>
     </main>
   );

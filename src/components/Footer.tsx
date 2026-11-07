@@ -1,17 +1,31 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MessageCircle, Send } from "lucide-react";
+import { Phone, Send } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-[var(--color-primary)] text-white pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer id="contact" className="bg-[var(--color-primary)] text-white pt-10 sm:pt-14 pb-10 relative overflow-hidden">
+      {/* Organic Elegant Wave / Zig-Zag Top Divider from user's image */}
+      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none -translate-y-[1px]">
+        <svg
+          className="relative block w-full h-8 sm:h-12 md:h-16 text-[#fdf8fa]"
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          {/* Smooth S-curve wave dipping down and sweeping up across the banner */}
+          <path d="M0,0 C320,65 520,75 820,35 C1120,-5 1320,40 1440,25 L1440,0 L0,0 Z" />
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         {/* Ready to Unwind Section */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 pt-4 sm:pt-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight">
             Ready to Unwind?
           </h2>
-          <p className="text-xs sm:text-sm text-white/90 max-w-xl mx-auto mb-8 font-light leading-relaxed">
+          <p className="text-xs sm:text-sm text-white/90 max-w-xl mx-auto mb-8 font-normal leading-relaxed">
             One call is all it takes. Tell us your city and preferred time — we&apos;ll have a therapist ready for you.
           </p>
 
@@ -30,7 +44,7 @@ export default function Footer() {
               rel="noreferrer"
               className="px-8 py-3.5 rounded-full border-2 border-white/80 text-white font-bold text-xs tracking-wider uppercase hover:bg-white/10 transition-all flex items-center gap-2"
             >
-              <MessageCircle className="w-4 h-4" /> WHATSAPP US
+              <WhatsAppIcon className="w-4 h-4 text-emerald-300" /> WHATSAPP US
             </a>
 
             <a
@@ -125,7 +139,7 @@ export default function Footer() {
                 rel="noreferrer"
                 className="w-full py-2.5 rounded-full bg-white/20 hover:bg-white/30 text-white font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-all"
               >
-                <MessageCircle className="w-3.5 h-3.5" /> WHATSAPP
+                <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-300" /> WHATSAPP
               </a>
               <a
                 href="https://t.me/+EuZUAx-uEB41YjE1"

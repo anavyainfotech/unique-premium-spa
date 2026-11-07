@@ -40,14 +40,17 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 z-10" />
       </div>
 
-      {/* Clean Centered Content: H1, Paragraph, and Buttons Only */}
-      <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center">
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.15] tracking-tight mb-6 drop-shadow-lg">
-          Always Make Room for a <br className="hidden sm:inline" />
-          Little Calm in <span className="text-pink-300">Your Life</span>
+      {/* Clean Centered Content: H1, Paragraph, and Buttons */}
+      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 flex flex-col items-center">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-extrabold text-white leading-[1.18] sm:leading-[1.14] tracking-tight mb-6 max-w-4xl drop-shadow-xl">
+          Always Make Room for a{" "}
+          <span className="inline-block bg-gradient-to-r from-pink-200 via-rose-300 to-pink-100 bg-clip-text text-transparent">
+            Little Calm
+          </span>{" "}
+          in Your Life
         </h1>
 
-        <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 font-light leading-relaxed drop-shadow">
+        <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 font-normal leading-relaxed drop-shadow">
           Premium therapeutic massage and holistic spa wellness across Delhi NCR, crafted for deep relaxation and mental rejuvenation.
         </p>
 

@@ -1,19 +1,15 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Jost } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
+import ClickSparkle from "@/components/ClickSparkle";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-});
-
-const jost = Jost({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -139,7 +135,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${jost.variable}`}>
+    <html lang="en" className={`${poppins.variable} font-sans`}>
       <head>
         <script
           type="application/ld+json"
@@ -151,6 +147,7 @@ export default function RootLayout({
         <div className="flex-1">{children}</div>
         <Footer />
         <FloatingActions />
+        <ClickSparkle />
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ export interface BlogPost {
   date: string;
   readTime: string;
   category: string;
+  image: string;
   excerpt: string;
   content: {
     heading: string;
@@ -22,6 +23,7 @@ export const blogPosts: BlogPost[] = [
     date: "Oct 28, 2026",
     readTime: "4 min read",
     category: "Wellness Guide",
+    image: "/services/full-body-massage.jpg",
     excerpt: "Sitting long hours in office cubicles or commuting across NCR takes a heavy toll on your cervical spine. Learn whether Swedish or Deep Tissue is right for you.",
     content: [
       {
@@ -67,6 +69,7 @@ export const blogPosts: BlogPost[] = [
     date: "Oct 15, 2026",
     readTime: "5 min read",
     category: "Therapy Focus",
+    image: "/services/sandwich-massage.jpg",
     excerpt: "When two therapists move in synchronization, your brain cannot easily track both rhythms, entering deep meditative theta brainwave relaxation quicker.",
     content: [
       {
@@ -111,6 +114,7 @@ export const blogPosts: BlogPost[] = [
     date: "Sep 30, 2026",
     readTime: "3 min read",
     category: "Aromatherapy",
+    image: "/spa-oil-generated.png",
     excerpt: "As seasonal changes bring cooler winds, lavender and sandalwood essential oils help restore dermal hydration while soothing muscle stiffness.",
     content: [
       {
@@ -148,6 +152,7 @@ export const blogPosts: BlogPost[] = [
     date: "Sep 12, 2026",
     readTime: "6 min read",
     category: "Couple Spa",
+    image: "/services/couple-massage.jpg",
     excerpt: "A step-by-step walkthrough of what our VIP Couple Suites offer — from floral hydrotherapy baths to customized mutual relaxation therapies.",
     content: [
       {

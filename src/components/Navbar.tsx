@@ -20,11 +20,11 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-white/95">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-white/95 border-b border-pink-100/60 shadow-xs">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         {/* Brand Logo & Name */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-14 h-14 shrink-0 transition-transform group-hover:scale-105">
+        <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 group py-1 min-w-0">
+          <div className="relative w-10 h-10 sm:w-16 sm:h-16 shrink-0 transition-transform duration-300 group-hover:scale-105">
             <Image
               src="/logo.png"
               alt="Unique Premium Spa"
@@ -33,9 +33,14 @@ export default function Navbar() {
               className="object-contain"
             />
           </div>
-          <span className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[var(--color-primary)]">
-            Unique Premium Spa
-          </span>
+          <div className="flex flex-col min-w-0">
+            <span className="text-base sm:text-2xl font-bold tracking-tight text-[var(--color-primary)] leading-tight group-hover:text-[var(--color-primary-hover)] transition-colors whitespace-nowrap">
+              Unique Premium Spa
+            </span>
+            <span className="text-[9px] sm:text-[11px] font-medium tracking-[0.12em] sm:tracking-[0.15em] uppercase text-gray-400 whitespace-nowrap">
+              Luxury Wellness &amp; Therapy
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
@@ -83,21 +88,14 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <div className="flex md:hidden items-center gap-2">
-          <a
-            href="tel:+919718892869"
-            className="p-2 rounded-full bg-[var(--color-primary)] text-white"
-            aria-label="Call"
-          >
-            <Phone className="w-4 h-4" />
-          </a>
+        {/* Mobile Hamburger Button Only (Phone button removed as requested) */}
+        <div className="flex md:hidden items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-gray-700 hover:text-[var(--color-primary)]"
+            className="p-2 -mr-1 text-gray-700 hover:text-[var(--color-primary)] rounded-lg hover:bg-pink-50 transition-colors"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-6 h-6 text-[var(--color-primary)]" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>

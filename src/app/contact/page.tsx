@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, MessageCircle, Send, Clock, CheckCircle } from "lucide-react";
+import { Phone, Send, Clock, CheckCircle } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -15,7 +16,6 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Generate direct WhatsApp booking message
     const text = encodeURIComponent(
       `Hello Unique Premium Spa,\nI would like to enquire for an appointment:\nName: ${formData.name}\nPhone: ${formData.phone}\nOutlet: ${formData.outlet}\nService: ${formData.service}\nNotes: ${formData.message}`
     );
@@ -24,44 +24,44 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-[var(--color-background)] min-h-screen py-16 px-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-[var(--color-background)] min-h-screen py-12 sm:py-16 px-4">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-[var(--color-primary)] block mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
+          <span className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-[var(--color-primary)] block mb-2">
             GET IN TOUCH
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[var(--color-primary)] mb-4">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-[var(--color-primary)] mb-3">
             Contact &amp; Book an Appointment
           </h1>
-          <p className="text-sm text-gray-600 leading-relaxed font-normal">
+          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
             Reach out through our central helpline, WhatsApp concierge, or submit an instant booking enquiry below.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
           
           {/* Left Info Column */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white rounded-3xl p-8 border border-pink-100 shadow-sm">
-              <h3 className="font-serif text-2xl font-bold text-gray-900 mb-6">
+          <div className="lg:col-span-5 space-y-5">
+            <div className="bg-white rounded-xl p-6 sm:p-7 border border-pink-100 shadow-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-5">
                 Direct Contact Lines
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <a
                   href="tel:+919718892869"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-pink-50/50 hover:bg-[#fff0f6] border border-pink-100 transition-all group"
+                  className="flex items-center gap-3.5 p-3.5 rounded-xl bg-pink-50/50 hover:bg-[#fff0f6] border border-pink-100 transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] uppercase tracking-wider text-gray-400 font-semibold block">
+                    <span className="text-[10px] uppercase tracking-wider text-gray-400 font-semibold block">
                       Direct Call Hotline
                     </span>
-                    <span className="font-serif text-lg font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors">
+                    <span className="text-base font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors">
                       +91 97188 92869
                     </span>
                   </div>
@@ -71,16 +71,16 @@ export default function ContactPage() {
                   href="https://wa.me/919718892869"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-pink-50/50 hover:bg-[#fff0f6] border border-pink-100 transition-all group"
+                  className="flex items-center gap-3.5 p-3.5 rounded-xl bg-pink-50/50 hover:bg-[#fff0f6] border border-pink-100 transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0">
-                    <MessageCircle className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0">
+                    <WhatsAppIcon className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <span className="text-[11px] uppercase tracking-wider text-gray-400 font-semibold block">
+                    <span className="text-[10px] uppercase tracking-wider text-gray-400 font-semibold block">
                       WhatsApp Booking
                     </span>
-                    <span className="font-serif text-lg font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors">
+                    <span className="text-base font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors">
                       Instant Chat &amp; Slot Confirmation
                     </span>
                   </div>
@@ -90,16 +90,16 @@ export default function ContactPage() {
                   href="https://t.me/+EuZUAx-uEB41YjE1"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-pink-50/50 hover:bg-[#fff0f6] border border-pink-100 transition-all group"
+                  className="flex items-center gap-3.5 p-3.5 rounded-xl bg-pink-50/50 hover:bg-[#fff0f6] border border-pink-100 transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[#229ED9] text-white flex items-center justify-center shrink-0">
-                    <Send className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-full bg-[#229ED9] text-white flex items-center justify-center shrink-0">
+                    <Send className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] uppercase tracking-wider text-gray-400 font-semibold block">
+                    <span className="text-[10px] uppercase tracking-wider text-gray-400 font-semibold block">
                       Telegram Concierge
                     </span>
-                    <span className="font-serif text-lg font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors">
+                    <span className="text-base font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors">
                       @UniquePremiumSpa
                     </span>
                   </div>
@@ -107,10 +107,10 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 border border-pink-100 shadow-sm">
-              <div className="flex items-center gap-3 mb-3 text-[var(--color-primary)]">
-                <Clock className="w-5 h-5" />
-                <h4 className="font-serif text-lg font-bold text-gray-900">Working Hours</h4>
+            <div className="bg-white rounded-xl p-6 sm:p-7 border border-pink-100 shadow-sm">
+              <div className="flex items-center gap-2.5 mb-2.5 text-[var(--color-primary)]">
+                <Clock className="w-4 h-4" />
+                <h4 className="text-base font-bold text-gray-900">Working Hours</h4>
               </div>
               <p className="text-xs text-gray-600 leading-relaxed font-light">
                 Open 7 Days a week from <strong>10:00 AM till 10:30 PM</strong>. Advance appointments recommended for evening &amp; weekend sessions.
@@ -120,21 +120,21 @@ export default function ContactPage() {
 
           {/* Right Form Column */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-pink-100 shadow-xl">
-              <h3 className="font-serif text-2xl font-bold text-gray-900 mb-2">
+            <div className="bg-white rounded-xl p-6 sm:p-8 border border-pink-100 shadow-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-1.5">
                 Book a Session Enquiry
               </h3>
-              <p className="text-xs text-gray-500 mb-8 font-light">
+              <p className="text-xs text-gray-500 mb-6 font-light">
                 Fill the details below and our reservations team will confirm slot availability immediately.
               </p>
 
               {submitted ? (
-                <div className="p-8 rounded-2xl bg-pink-50 text-center border border-pink-200">
-                  <CheckCircle className="w-12 h-12 text-[var(--color-primary)] mx-auto mb-3" />
-                  <h4 className="font-serif text-xl font-bold text-gray-900 mb-2">
+                <div className="p-6 rounded-xl bg-pink-50 text-center border border-pink-200">
+                  <CheckCircle className="w-10 h-10 text-[var(--color-primary)] mx-auto mb-2" />
+                  <h4 className="text-lg font-bold text-gray-900 mb-1">
                     Enquiry Forwarded to WhatsApp!
                   </h4>
-                  <p className="text-xs text-gray-600 mb-5">
+                  <p className="text-xs text-gray-600 mb-4">
                     Our team is reviewing your preferred slot and will reply momentarily.
                   </p>
                   <button
@@ -145,10 +145,10 @@ export default function ContactPage() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs font-semibold text-gray-700 block mb-2 uppercase tracking-wide">
+                      <label className="text-xs font-semibold text-gray-700 block mb-1.5 uppercase tracking-wide">
                         Your Full Name *
                       </label>
                       <input
@@ -157,12 +157,12 @@ export default function ContactPage() {
                         placeholder="e.g. Rahul Sharma"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-pink-200 text-sm focus:outline-hidden focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-pink-200 text-xs sm:text-sm focus:outline-hidden focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
                       />
                     </div>
 
                     <div>
-                      <label className="text-xs font-semibold text-gray-700 block mb-2 uppercase tracking-wide">
+                      <label className="text-xs font-semibold text-gray-700 block mb-1.5 uppercase tracking-wide">
                         Phone Number *
                       </label>
                       <input
@@ -171,20 +171,20 @@ export default function ContactPage() {
                         placeholder="+91 98765 43210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-pink-200 text-sm focus:outline-hidden focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-pink-200 text-xs sm:text-sm focus:outline-hidden focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs font-semibold text-gray-700 block mb-2 uppercase tracking-wide">
+                      <label className="text-xs font-semibold text-gray-700 block mb-1.5 uppercase tracking-wide">
                         Preferred Outlet *
                       </label>
                       <select
                         value={formData.outlet}
                         onChange={(e) => setFormData({ ...formData, outlet: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-pink-200 text-sm focus:outline-hidden focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] bg-white"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-pink-200 text-xs sm:text-sm focus:outline-hidden focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] bg-white"
                       >
                         <option value="Aerocity">Aerocity (IGI Airport)</option>
                         <option value="Connaught Place">Connaught Place (CP)</option>
@@ -195,13 +195,13 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="text-xs font-semibold text-gray-700 block mb-2 uppercase tracking-wide">
+                      <label className="text-xs font-semibold text-gray-700 block mb-1.5 uppercase tracking-wide">
                         Select Therapy *
                       </label>
                       <select
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-pink-200 text-sm focus:outline-hidden focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] bg-white"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-pink-200 text-xs sm:text-sm focus:outline-hidden focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] bg-white"
                       >
                         <option value="Full Body Massage">Full Body Massage (₹1,500)</option>
                         <option value="Complete Sessions">Complete Sessions (₹2,499)</option>
@@ -214,7 +214,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="text-xs font-semibold text-gray-700 block mb-2 uppercase tracking-wide">
+                    <label className="text-xs font-semibold text-gray-700 block mb-1.5 uppercase tracking-wide">
                       Preferred Date &amp; Time / Notes
                     </label>
                     <textarea
@@ -222,13 +222,13 @@ export default function ContactPage() {
                       placeholder="e.g. Today at 5:00 PM, prefer female therapist..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-pink-200 text-sm focus:outline-hidden focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-pink-200 text-xs sm:text-sm focus:outline-hidden focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-full bg-[var(--color-primary)] text-white font-bold text-xs uppercase tracking-wider hover:bg-[var(--color-primary-hover)] transition-all shadow-lg shadow-pink-500/25 cursor-pointer"
+                    className="w-full py-3 rounded-lg bg-[var(--color-primary)] text-white font-bold text-xs uppercase tracking-wider hover:bg-[var(--color-primary-hover)] transition-all shadow-md shadow-pink-500/20 cursor-pointer"
                   >
                     Confirm &amp; Proceed on WhatsApp
                   </button>

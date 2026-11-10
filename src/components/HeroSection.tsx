@@ -29,6 +29,7 @@ export default function HeroSection() {
           loop
           muted
           playsInline
+          preload="metadata"
           className="w-full h-full object-cover scale-105"
           poster="/hero-woman.png"
           aria-hidden="true"

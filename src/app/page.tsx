@@ -639,10 +639,10 @@ export default function Home() {
                 img: "/outlets/ibis-aerocity.jpg",
               },
               {
-                name: "The LaLiT",
+                name: "The Royal Plaza",
                 area: "Connaught Place (CP)",
                 tag: "Central Delhi",
-                img: "/outlets/the-lalit-cp.jpg",
+                img: "/outlets/the-royal-plaza.jpg",
               },
               {
                 name: "The Suryaa",

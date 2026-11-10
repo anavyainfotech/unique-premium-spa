@@ -18,7 +18,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://uniquepremiumspa.co
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Unique Premium Spa — Massage & Luxury Spa Services Delhi NCR",
+    default: "Massage & Luxury Spa Services in Delhi NCR — Unique Premium Spa",
     template: "%s | Unique Premium Spa",
   },
   description:
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Unique Premium Spa — Massage & Luxury Spa Services Delhi NCR",
+    title: "Massage & Luxury Spa Services in Delhi NCR — Unique Premium Spa",
     description:
       "Premium wellness and authentic body therapies across Aerocity, CP, Gurgaon, Vasant Kunj & NFC. Certified therapists & private suites.",
     url: siteUrl,
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Unique Premium Spa — Massage & Luxury Spa Services Delhi NCR",
+    title: "Massage & Luxury Spa Services in Delhi NCR — Unique Premium Spa",
     description:
       "Premium wellness and authentic body therapies across Delhi NCR. Certified therapists & hygienic suites.",
     images: ["/spa-oil-generated.png"],

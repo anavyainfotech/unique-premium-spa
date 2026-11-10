@@ -5,8 +5,11 @@ import { blogPosts } from "@/data/blogPosts";
 import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata = {
-  title: "Spa & Wellness Blog — Unique Premium Spa",
+  title: "Spa & Wellness Blog — Unique Premium Spa Delhi NCR",
   description: "Read expert guides on massage benefits, choosing the right therapy, stress relief and wellness tips in Delhi NCR.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 const generalBlogFaqs = [
@@ -42,17 +45,17 @@ export default function BlogPage() {
           </p>
         </div>
 
-        {/* Blog Posts Grid — 3 blogs per row on desktop (lg:grid-cols-3), no border on card, full card clickable */}
+        {/* Blog Posts Grid — Full card clickable matching homepage aesthetic */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mb-16">
           {blogPosts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="bg-white rounded-xl p-5 sm:p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative cursor-pointer hover:-translate-y-1"
+              className="bg-white rounded-2xl overflow-hidden border border-pink-100 hover:border-[var(--color-primary)]/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer block"
             >
               <div>
                 {/* Blog Image */}
-                <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-5 bg-pink-50">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-pink-50">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -60,35 +63,34 @@ export default function BlogPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                </div>
-
-                <div className="flex flex-wrap items-center gap-2.5 text-xs text-gray-400 mb-3">
-                  <span className="px-2.5 py-0.5 rounded-full bg-pink-50 text-[var(--color-primary)] font-semibold uppercase tracking-wider text-[10px]">
+                  <span className="absolute top-3 left-3 text-[10px] font-semibold uppercase tracking-wider text-[var(--color-primary)] bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-full shadow-sm">
                     {post.category}
                   </span>
-                  <span className="flex items-center gap-1 font-medium text-[11px]">
-                    <Calendar className="w-3 h-3 text-[var(--color-primary)]" /> {post.date}
-                  </span>
-                  <span>·</span>
-                  <span className="flex items-center gap-1 font-medium text-[11px]">
-                    <Clock className="w-3 h-3 text-[var(--color-primary)]" /> {post.readTime}
-                  </span>
                 </div>
 
-                <h2 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors mb-2.5 leading-snug line-clamp-2">
-                  {post.title}
-                </h2>
-                <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed mb-5 line-clamp-3">
-                  {post.excerpt}
-                </p>
+                <div className="p-5 sm:p-6">
+                  <div className="flex items-center gap-3 text-xs text-gray-500 mb-2.5">
+                    <span className="flex items-center gap-1 font-medium text-[11px]">
+                      <Calendar className="w-3.5 h-3.5 text-[var(--color-primary)]" /> {post.date}
+                    </span>
+                    <span>•</span>
+                    <span className="flex items-center gap-1 font-medium text-[11px]">
+                      <Clock className="w-3.5 h-3.5 text-[var(--color-primary)]" /> {post.readTime}
+                    </span>
+                  </div>
+
+                  <h2 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors mb-2 leading-snug line-clamp-2">
+                    {post.title}
+                  </h2>
+                  <p className="text-xs text-gray-600 font-light leading-relaxed mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                </div>
               </div>
 
-              <div className="pt-3 border-t border-pink-50 flex items-center justify-between text-xs font-bold text-[var(--color-primary)]">
-                <span className="inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
-                  Read Full Article <ArrowRight className="w-3.5 h-3.5" />
-                </span>
-                <span className="text-[11px] font-semibold text-gray-400 group-hover:text-[var(--color-primary)] transition-colors">
-                  Explore →
+              <div className="px-5 sm:px-6 pb-5 pt-0">
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[var(--color-primary)] group-hover:underline">
+                  Read Full Article <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </div>
             </Link>

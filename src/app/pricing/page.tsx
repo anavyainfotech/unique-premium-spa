@@ -1,8 +1,11 @@
 import { Check, Phone, ShieldCheck } from "lucide-react";
 
 export const metadata = {
-  title: "Pricing & Packages — Unique Premium Spa",
+  title: "Pricing & Packages — Unique Premium Spa Delhi NCR",
   description: "Transparent pricing for massage sessions in Delhi NCR. Aerocity, CP, Gurgaon, Vasant Kunj, NFC.",
+  alternates: {
+    canonical: "/pricing",
+  },
 };
 
 export default function PricingPage() {

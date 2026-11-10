@@ -10,11 +10,15 @@ import {
   Users, 
   Heart, 
   Flower2, 
-  ArrowRight
+  ArrowRight,
+  Calendar,
+  Clock,
+  BookOpen
 } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import HeroSection from "@/components/HeroSection";
 import ScrollReveal from "@/components/ScrollReveal";
+import { blogPosts } from "@/data/blogPosts";
 
 const homeFaqs = [
   {
@@ -40,8 +44,25 @@ const homeFaqs = [
 ];
 
 export default function Home() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: homeFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <main className="min-h-screen bg-[var(--color-background)] text-[var(--color-foreground)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Clean Centered Hero with Parallax Video */}
       <HeroSection />
 
@@ -597,71 +618,90 @@ export default function Home() {
             Conveniently located luxury spa centres across Delhi &amp; Gurgaon with VIP treatment suites and private showers.
           </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3.5 mb-6 sm:mb-8">
-            <a
-              href="tel:+919718892869"
-              className="p-3 sm:p-4 rounded-xl border border-pink-100 bg-[#fdfafb] hover:border-[var(--color-primary)] hover:bg-white hover:shadow-md transition-all text-center flex flex-col items-center group cursor-pointer"
-            >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-pink-100/80 text-[var(--color-primary)] flex items-center justify-center mb-2 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
-                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </div>
-              <span className="text-[11px] sm:text-xs font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors block leading-tight">
-                Aerocity
-              </span>
-              <span className="text-[9px] sm:text-[10px] text-gray-400 font-normal mt-0.5">Near IGI Airport</span>
-            </a>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8 text-left">
+            {[
+              {
+                name: "Pullman & Novotel",
+                area: "Aerocity, New Delhi",
+                tag: "5-Star Luxury",
+                img: "/outlets/pullman-aerocity.jpg",
+              },
+              {
+                name: "Lemon Tree Premier",
+                area: "Aerocity, New Delhi",
+                tag: "Transit & Express",
+                img: "/outlets/lemon-tree-aerocity.jpg",
+              },
+              {
+                name: "ibis Hotel",
+                area: "Aerocity, New Delhi",
+                tag: "Hospitality Hub",
+                img: "/outlets/ibis-aerocity.jpg",
+              },
+              {
+                name: "The LaLiT",
+                area: "Connaught Place (CP)",
+                tag: "Central Delhi",
+                img: "/outlets/the-lalit-cp.jpg",
+              },
+              {
+                name: "The Suryaa",
+                area: "New Friends Colony",
+                tag: "South Delhi",
+                img: "/outlets/the-suryaa-nfc.jpg",
+              },
+              {
+                name: "Jaypee Vasant",
+                area: "Vasant Kunj / Vihar",
+                tag: "South Delhi Elite",
+                img: "/outlets/jaypee-vasant-continental.jpg",
+              },
+              {
+                name: "Radisson Hotel",
+                area: "Udyog Vihar, Gurugram",
+                tag: "Cyber City Vicinity",
+                img: "/outlets/radisson-gurugram.jpg",
+              },
+            ].map((hotel, idx) => (
+              <Link
+                key={idx}
+                href="/outlets"
+                className="group relative rounded-xl overflow-hidden border border-pink-100 bg-[#fdfafb] hover:shadow-lg transition-all"
+              >
+                <div className="relative h-28 w-full overflow-hidden">
+                  <Image
+                    src={hotel.img}
+                    alt={hotel.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <span className="absolute top-2 left-2 text-[9px] font-bold bg-white/95 text-[var(--color-primary)] px-2 py-0.5 rounded-full uppercase tracking-wider">
+                    {hotel.tag}
+                  </span>
+                  <div className="absolute bottom-2 left-2 right-2 text-white">
+                    <span className="text-[12px] sm:text-sm font-bold block leading-tight drop-shadow-sm">
+                      {hotel.name}
+                    </span>
+                    <span className="text-[10px] text-pink-200 block truncate">
+                      {hotel.area}
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
 
-            <a
-              href="tel:+919718892869"
-              className="p-3 sm:p-4 rounded-xl border border-pink-100 bg-[#fdfafb] hover:border-[var(--color-primary)] hover:bg-white hover:shadow-md transition-all text-center flex flex-col items-center group cursor-pointer"
+            <Link
+              href="/outlets"
+              className="group p-4 rounded-xl border border-dashed border-pink-300 bg-pink-50/50 hover:bg-pink-100/60 transition-all flex flex-col items-center justify-center text-center cursor-pointer"
             >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-pink-100/80 text-[var(--color-primary)] flex items-center justify-center mb-2 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
-                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </div>
-              <span className="text-[11px] sm:text-xs font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors block leading-tight">
-                NFC (New Friends)
+              <MapPin className="w-6 h-6 text-[var(--color-primary)] mb-1 group-hover:scale-110 transition-transform" />
+              <span className="text-xs font-bold text-[var(--color-primary)]">
+                View All Outlets
               </span>
-              <span className="text-[9px] sm:text-[10px] text-gray-400 font-normal mt-0.5">South Delhi Hub</span>
-            </a>
-
-            <a
-              href="tel:+919718892869"
-              className="p-3 sm:p-4 rounded-xl border border-pink-100 bg-[#fdfafb] hover:border-[var(--color-primary)] hover:bg-white hover:shadow-md transition-all text-center flex flex-col items-center group cursor-pointer"
-            >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-pink-100/80 text-[var(--color-primary)] flex items-center justify-center mb-2 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
-                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </div>
-              <span className="text-[11px] sm:text-xs font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors block leading-tight">
-                Connaught Place
-              </span>
-              <span className="text-[9px] sm:text-[10px] text-gray-400 font-normal mt-0.5">Central Delhi</span>
-            </a>
-
-            <a
-              href="tel:+919718892869"
-              className="p-3 sm:p-4 rounded-xl border border-pink-100 bg-[#fdfafb] hover:border-[var(--color-primary)] hover:bg-white hover:shadow-md transition-all text-center flex flex-col items-center group cursor-pointer"
-            >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-pink-100/80 text-[var(--color-primary)] flex items-center justify-center mb-2 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
-                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </div>
-              <span className="text-[11px] sm:text-xs font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors block leading-tight">
-                Gurgaon
-              </span>
-              <span className="text-[9px] sm:text-[10px] text-gray-400 font-normal mt-0.5">Cyber City</span>
-            </a>
-
-            <a
-              href="tel:+919718892869"
-              className="p-3 sm:p-4 rounded-xl border border-pink-100 bg-[#fdfafb] hover:border-[var(--color-primary)] hover:bg-white hover:shadow-md transition-all text-center flex flex-col items-center group cursor-pointer col-span-2 sm:col-span-1"
-            >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-pink-100/80 text-[var(--color-primary)] flex items-center justify-center mb-2 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
-                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </div>
-              <span className="text-[11px] sm:text-xs font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors block leading-tight">
-                Vasant Kunj
-              </span>
-              <span className="text-[9px] sm:text-[10px] text-gray-400 font-normal mt-0.5">South Delhi Malls</span>
-            </a>
+              <span className="text-[10px] text-gray-500">Addresses &amp; Timings →</span>
+            </Link>
           </div>
 
           <div className="inline-flex items-center gap-2 p-1.5 px-4 rounded-full bg-pink-50 border border-pink-200 text-xs text-gray-700">
@@ -818,6 +858,81 @@ export default function Home() {
             title="Frequently Asked Questions"
             subtitle="EVERYTHING YOU NEED TO KNOW"
           />
+        </ScrollReveal>
+      </section>
+
+      {/* Latest 3 Blog Articles Section */}
+      <section className="py-12 sm:py-16 px-4 bg-white border-t border-pink-100">
+        <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12">
+            <div>
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-[var(--color-primary)] font-semibold block mb-1.5 flex items-center gap-1.5">
+                <BookOpen className="w-3.5 h-3.5" /> WELLNESS &amp; SPA INSIGHTS
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-[var(--color-primary)] tracking-tight">
+                Latest from Our Blog
+              </h2>
+            </div>
+            <Link
+              href="/blog"
+              className="mt-3 sm:mt-0 inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[var(--color-primary)] hover:underline"
+            >
+              View all articles <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {blogPosts.slice(0, 3).map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="bg-white rounded-2xl overflow-hidden border border-pink-100 hover:border-[var(--color-primary)]/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer block"
+              >
+                <div>
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-pink-50">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    <span className="absolute top-3 left-3 text-[10px] font-semibold uppercase tracking-wider text-[var(--color-primary)] bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-full shadow-sm">
+                      {post.category}
+                    </span>
+                  </div>
+
+                  <div className="p-5 sm:p-6">
+                    <div className="flex items-center gap-3 text-xs text-gray-500 mb-2.5">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-3.5 h-3.5 text-[var(--color-primary)]" />
+                        {post.date}
+                      </span>
+                      <span>•</span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3.5 h-3.5 text-[var(--color-primary)]" />
+                        {post.readTime}
+                      </span>
+                    </div>
+
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors leading-snug mb-2 line-clamp-2">
+                      {post.title}
+                    </h3>
+
+                    <p className="text-xs text-gray-600 font-light leading-relaxed line-clamp-3 mb-4">
+                      {post.excerpt}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-5 sm:px-6 pb-5 pt-0">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[var(--color-primary)] group-hover:underline">
+                    Read Full Article <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </ScrollReveal>
       </section>
     </main>

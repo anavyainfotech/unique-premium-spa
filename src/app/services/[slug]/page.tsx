@@ -40,6 +40,15 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${service.title} in Delhi NCR — Unique Premium Spa`,
     description: service.desc,
+    alternates: {
+      canonical: `/services/${slug}`,
+    },
+    openGraph: {
+      title: `${service.title} in Delhi NCR — Unique Premium Spa`,
+      description: service.desc,
+      url: `/services/${slug}`,
+      images: [service.image],
+    },
   };
 }
 

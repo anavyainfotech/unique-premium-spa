@@ -97,6 +97,7 @@ export default function Footer() {
               <li><Link href="/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
               <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Sitemap</a></li>
             </ul>
           </div>
 
@@ -154,8 +155,19 @@ export default function Footer() {
         </div>
 
         {/* Copyright Bottom Bar */}
-        <div className="pt-8 border-t border-white/20 text-center text-xs text-white/70 font-light">
-          © 2026 Unique Premium Spa. All rights reserved. Massage &amp; spa services across Delhi NCR.
+        <div className="pt-8 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/70 font-light">
+          <div>
+            © 2026 Unique Premium Spa. All rights reserved. Massage &amp; spa services across Delhi NCR.
+          </div>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
+            <span>•</span>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+            <span>•</span>
+            <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline underline-offset-4">
+              Sitemap
+            </a>
+          </div>
         </div>
       </div>
     </footer>

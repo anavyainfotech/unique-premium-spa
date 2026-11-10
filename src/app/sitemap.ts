@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/data/blogPosts";
 import { servicesData } from "@/data/servicesData";
+import { outletsData } from "@/data/outletsData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://uniquepremiumspa.com";
@@ -35,8 +36,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/outlets`,
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
-      priority: 0.8,
+      priority: 0.85,
     },
+    ...outletsData.map((outlet) => ({
+      url: `${baseUrl}/outlets/${outlet.slug}`,
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
     {
       url: `${baseUrl}/gallery`,
       lastModified: currentDate,

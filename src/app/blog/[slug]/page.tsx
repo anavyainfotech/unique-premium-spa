@@ -27,6 +27,15 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${post.title} — Unique Premium Spa`,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title: `${post.title} — Unique Premium Spa`,
+      description: post.excerpt,
+      url: `/blog/${slug}`,
+      images: [post.image],
+    },
   };
 }
 
@@ -85,20 +94,20 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           )}
 
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-light border-l-4 border-[var(--color-primary)] pl-4 italic bg-white/70 p-4 rounded-xl border border-pink-100">
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-light border-l-4 border-[var(--color-primary)] pl-4 italic">
             {post.excerpt}
           </p>
         </header>
 
-        {/* Article Body */}
-        <div className="bg-white rounded-xl p-6 sm:p-10 border border-pink-100 shadow-sm space-y-6 mb-10">
+        {/* Article Body — Clean editorial layout without card box/background */}
+        <div className="space-y-8 mb-12">
           {post.content.map((section, idx) => (
             <section key={idx} className="space-y-3">
-              <h2 className="text-lg sm:text-xl font-bold text-[var(--color-primary)]">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
                 {section.heading}
               </h2>
               {section.paragraphs.map((p, pIdx) => (
-                <p key={pIdx} className="text-xs sm:text-sm text-gray-700 leading-relaxed font-light">
+                <p key={pIdx} className="text-sm sm:text-base text-gray-700 leading-relaxed font-light">
                   {p}
                 </p>
               ))}

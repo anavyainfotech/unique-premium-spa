@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/spa-massage-generated.png",
+        url: "/spa-oil-generated.png",
         width: 1200,
         height: 630,
         alt: "Unique Premium Spa Delhi NCR",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: "Unique Premium Spa — Massage & Luxury Spa Services Delhi NCR",
     description:
       "Premium wellness and authentic body therapies across Delhi NCR. Certified therapists & hygienic suites.",
-    images: ["/spa-massage-generated.png"],
+    images: ["/spa-oil-generated.png"],
   },
   robots: {
     index: true,
@@ -89,7 +89,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "HealthAndBeautyBusiness",
   name: "Unique Premium Spa",
-  image: `${siteUrl}/spa-massage-generated.png`,
+  image: `${siteUrl}/spa-oil-generated.png`,
   "@id": siteUrl,
   url: siteUrl,
   telephone: "+91-9718892869",

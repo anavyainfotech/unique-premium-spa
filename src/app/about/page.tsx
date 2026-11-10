@@ -4,6 +4,9 @@ import { Award, ShieldCheck, Sparkles } from "lucide-react";
 export const metadata = {
   title: "About Us — Unique Premium Spa Delhi NCR",
   description: "Learn about Unique Premium Spa's history, hygiene standards, certified therapists, and philosophy.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

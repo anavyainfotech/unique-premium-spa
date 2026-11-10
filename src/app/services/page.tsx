@@ -6,6 +6,9 @@ import { servicesData } from "@/data/servicesData";
 export const metadata = {
   title: "Spa Services & Therapies — Unique Premium Spa Delhi NCR",
   description: "Explore our luxury massage therapies: Full Body, B2B, Sandwich four-hand, Couple suite, and Authentic Thai massage.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesPage() {

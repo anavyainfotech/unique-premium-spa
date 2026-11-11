@@ -3,9 +3,9 @@ import Link from "next/link";
 import { outletsData } from "@/data/outletsData";
 
 export const metadata = {
-  title: "Our 7 Luxury Spa Outlets — Unique Premium Spa Delhi NCR",
+  title: "Our Luxury Spa Outlets — Unique Premium Spa Delhi NCR",
   description:
-    "Explore our 7 premium hotel spa outlets across Delhi NCR: Aerocity, Connaught Place, Gurgaon, Vasant Kunj, and New Friends Colony.",
+    "Explore our 10 premium hotel spa outlets across Delhi NCR: Aerocity, Chanakyapuri, Connaught Place, Gurgaon, Vasant Kunj, and New Friends Colony.",
   alternates: {
     canonical: "/outlets",
   },
@@ -18,13 +18,13 @@ export default function OutletsPage() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <span className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-[var(--color-primary)] block mb-2">
-            7 CONVENIENT NCR LOCATIONS
+            10 CONVENIENT NCR LOCATIONS
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-[var(--color-primary)] mb-3">
             Our Spa Outlets in Delhi NCR
           </h1>
           <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
-            Centrally situated across prime luxury hotel locations in Aerocity, Connaught Place, South Delhi, and Gurgaon. Click on any outlet to view details.
+            Centrally situated across prime luxury hotel locations in Aerocity, Chanakyapuri, Connaught Place, South Delhi, and Gurgaon. Click on any outlet to view details.
           </p>
         </div>
 

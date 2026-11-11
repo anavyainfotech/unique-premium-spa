@@ -108,10 +108,10 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs text-white/80 font-light">
               <li><Link href="/outlets" className="hover:text-white transition-colors">Spa in Aerocity</Link></li>
-              <li><Link href="/outlets" className="hover:text-white transition-colors">Spa in NFC (New Friends Colony)</Link></li>
+              <li><Link href="/outlets" className="hover:text-white transition-colors">Spa in Chanakyapuri</Link></li>
               <li><Link href="/outlets" className="hover:text-white transition-colors">Spa in CP (Connaught Place)</Link></li>
               <li><Link href="/outlets" className="hover:text-white transition-colors">Spa in Gurgaon</Link></li>
-              <li><Link href="/outlets" className="hover:text-white transition-colors">Spa in Vasant Kunj</Link></li>
+              <li><Link href="/outlets" className="hover:text-white transition-colors">Spa in Vasant Kunj / NFC</Link></li>
             </ul>
           </div>
 

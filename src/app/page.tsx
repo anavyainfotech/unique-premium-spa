@@ -605,14 +605,14 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* Find Us Near You / 7 Outlets Section */}
+      {/* Find Us Near You / Outlets Section */}
       <section id="outlets" className="py-12 sm:py-16 px-4 bg-white">
         <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-[var(--color-primary)] font-semibold block mb-1.5">
             FIND US NEAR YOU
           </span>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--color-primary)] tracking-tight mb-3 sm:mb-4">
-            7 Outlets Across Delhi NCR
+            10 Outlets Across Delhi NCR
           </h2>
           <p className="text-xs sm:text-sm text-gray-500 max-w-xl mx-auto mb-7 sm:mb-10 font-normal leading-relaxed">
             Conveniently located luxury spa centres across Delhi &amp; Gurgaon with VIP treatment suites and private showers.
@@ -620,6 +620,24 @@ export default function Home() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8 text-left">
             {[
+              {
+                name: "The Ashok Hotel",
+                area: "Chanakyapuri, New Delhi",
+                tag: "Diplomatic Enclave",
+                img: "/outlets/the-ashok-chanakyapuri.jpg",
+              },
+              {
+                name: "Roseate House",
+                area: "Aerocity, New Delhi",
+                tag: "Ultra Luxury",
+                img: "/outlets/roseate-house-aerocity.jpg",
+              },
+              {
+                name: "Andaz Delhi (Hyatt)",
+                area: "Aerocity, New Delhi",
+                tag: "Hyatt Concept",
+                img: "/outlets/andaz-hotel-aerocity.jpg",
+              },
               {
                 name: "Pullman & Novotel",
                 area: "Aerocity, New Delhi",
